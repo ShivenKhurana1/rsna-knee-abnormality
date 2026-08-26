@@ -1,0 +1,17 @@
+{
+  "id": "blackpearls1/rsna-knee-probe-arch",
+  "title": "RSNA Knee Probe Arch",
+  "code_file": "rsna-knee-probe-arch.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "surasan092/rsna-knee-dinov3-s-v13-1-gpu-util-full-ft-model"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

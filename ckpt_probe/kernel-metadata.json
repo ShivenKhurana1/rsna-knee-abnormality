@@ -1,0 +1,28 @@
+{
+  "id": "blackpearls1/rsna-knee-ckpt-probe",
+  "title": "RSNA Knee Ckpt Probe",
+  "code_file": "rsna-knee-ckpt-probe.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "dreaddevelopment/raptor-cnn336",
+    "dreaddevelopment/raptor-knee-arms",
+    "dreaddevelopment/raptor-knee-arms-x",
+    "dreaddevelopment/raptor-knee-finespacing",
+    "dreaddevelopment/raptor-knee-fullspan",
+    "dreaddevelopment/raptor-knee-maxspan",
+    "dreaddevelopment/raptor-knee-native384",
+    "dreaddevelopment/raptor-knee-native384dense",
+    "dreaddevelopment/raptor-knee-widedense",
+    "dreaddevelopment/raptor-knee-widefov",
+    "sahandhassani21/rsna-knee-model-bundle",
+    "tim9510019/rsna-knee-v34-master-models"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

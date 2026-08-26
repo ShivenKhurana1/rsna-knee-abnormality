@@ -1,0 +1,25 @@
+# --- RSNA competition data: licensed, do not redistribute ---
+train.csv
+train_series.csv
+test.csv
+test_series.csv
+sample_submission.csv
+*_series/
+submission*.csv
+
+# --- third-party model weights / predictions (mirror from their sources instead) ---
+*.pt
+*.pth
+*.npy
+*.npz
+*.parquet
+oof_harness/*.csv
+oof_harness/*.npy
+
+# --- assistant / editor cruft ---
+CLAUDE.md
+.claude/
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

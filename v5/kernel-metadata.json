@@ -1,0 +1,29 @@
+{
+  "id": "blackpearls1/rsna-knee-ensemble-v5",
+  "title": "RSNA Knee Ensemble V5",
+  "code_file": "rsna-knee-ensemble-v5.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "pilkwang/rsna-knee-weights",
+    "pilkwang/rsna-knee-llm-labels",
+    "stevenleehans/rsna-knee-llm-report-labels",
+    "mattiaangeli/knee-mri-fold-weights",
+    "mattiaangeli/rsna-knee-radimagenet-foldsv1-heads",
+    "antoinegg1/rsna-knee-e11-diverse-heads-v20",
+    "prvsiyan/rsna-knee-v52-radimagenet-heads-20260812",
+    "marwanmath/resnet-50-radimagenet-marwan"
+  ],
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
+  "kernel_sources": [],
+  "model_sources": [
+    "metaresearch/dinov2/PyTorch/small/1"
+  ]
+}

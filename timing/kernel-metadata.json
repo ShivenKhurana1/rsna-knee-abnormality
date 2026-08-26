@@ -1,0 +1,26 @@
+{
+  "id": "blackpearls1/rsna-knee-timing",
+  "title": "RSNA Knee Timing",
+  "code_file": "rsna-knee-timing.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "pilkwang/rsna-knee-weights",
+    "pilkwang/rsna-knee-llm-labels",
+    "mattiaangeli/knee-mri-fold-weights",
+    "mattiaangeli/rsna-knee-radimagenet-foldsv1-heads",
+    "marwanmath/resnet-50-radimagenet-marwan"
+  ],
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
+  "kernel_sources": [],
+  "model_sources": [
+    "metaresearch/dinov2/pyTorch/small/1"
+  ]
+}
