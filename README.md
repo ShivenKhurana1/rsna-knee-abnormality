@@ -13,7 +13,7 @@ third-party weights. Everything mounts its inputs from Kaggle at run time; see e
 
 | Directory | What it is |
 |---|---|
-| `v5` … `v8` | Successive submission notebooks (see below) |
+| `v5` … `v9` | Successive submission notebooks (see below) |
 | `variant_native` | A/B: stage-1 native pool vs public frontier |
 | `ckpt_probe` | **CPU-only** kernel that ranks every published checkpoint by reading `gold_auc` out of the `.pt` headers |
 | `oof_harness` | Out-of-fold evaluation at n=4,349 instead of the 58-study gate (README only; data not redistributed) |
