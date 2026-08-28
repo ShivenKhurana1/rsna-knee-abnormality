@@ -23,7 +23,3 @@ CLAUDE.md
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-
-# --- local review drafts, not for commit ---
-v11/model_review.txt
-v11/efficiency_review.txt
