@@ -71,3 +71,51 @@ cutoffs) applied on top of the inherited pipeline.
 
 Upstream's own warning is worth repeating: the base notebook states it is *"likely overfit to the
 public leaderboard"* after a fork-and-republish race chasing 0.001–0.003 movements.
+
+## v9 — an originally trained model joins the ensemble
+
+Everything above v8 is assembled from public weights. `v9` is the first version containing a
+model trained here.
+
+**`train_p2`** established that training on Kaggle is possible after all. An earlier measurement
+said 6.54 h/epoch and I concluded it was hopeless — wrong, and for an avoidable reason: the cost
+was network-mount I/O, and I dismissed staging the corpus locally because I assumed only
+`/kaggle/working` (~20 GB) was writable while the corpus is 22 GB. **`/tmp` has ~1.1 TB.** After
+staging: **1.08 s/study, a 5.02x speedup, 0.96 h/epoch**. Always check `statvfs` before
+concluding a staging job does not fit.
+
+**`train_p3`** is the training run itself — resumable across sessions (it attaches its own prior
+output and restores model/optimiser/scheduler/scaler/epoch), which is required because sessions
+cap at 12 h and the recipe needs ~21 h. It merges both corpus parts so it trains on all 4,349
+report-labelled studies; the 58 expert-labelled studies are held out entirely.
+
+Result after 16 epochs: **gold-gate macro AUC 0.9036**.
+
+| | gold AUC |
+|---|---|
+| our model (`p3`) | **0.9036** |
+| best public label extractor | 0.8991 |
+| best public checkpoint | 0.9214 |
+
+It beats the label extractor that supervised it. More usefully it is *decorrelated* — rank
+correlation 0.65-0.73 against the public families, while scoring far above them individually
+(next best family is 0.8576). Adding it to a blend is worth **+0.0223, 95% CI [+0.0115, +0.0337],
+P(better) 100%** on the gold gate — the first blending change in this project whose confidence
+interval excludes zero.
+
+**`v9`** adds it to stage 4 as a second arm at equal weight. It shares the architecture,
+resolution and corpus format of the public raptor arms, so no new inference code was needed.
+
+**`v9_cpu`** is a CPU-only wiring check. The pipeline runs at 6.443 s/study on a T4 and CPU is
+~24x slower, so a full test set would need ~56 h against the 9 h cap — but the *public* test set
+is 3 studies, so correctness can be verified on CPU without spending GPU quota. Not submittable.
+
+### Reproducing
+
+    # train (re-run until epochs_done = 16; it resumes itself)
+    cd train_p3 && kaggle kernels push -p .
+
+    # then publish the checkpoint as a dataset and run the ensemble
+    cd v9 && kaggle kernels push -p .
+
+Note that `train_p3` writes `raptor_ft_p3.pt` (279 MB); model weights are not committed here.

@@ -9,6 +9,7 @@
   "enable_tpu": false,
   "enable_internet": false,
   "dataset_sources": [
+    "ahmadmuzameltokhi/rsna-knee-v3-offline",
     "dreaddevelopment/raptor-cnn336",
     "dreaddevelopment/raptor-knee-arms",
     "dreaddevelopment/raptor-knee-arms-x",
@@ -19,7 +20,10 @@
     "dreaddevelopment/raptor-knee-native384dense",
     "dreaddevelopment/raptor-knee-widedense",
     "dreaddevelopment/raptor-knee-widefov",
+    "mikebelliveau/rsna-knee-public-weights",
     "sahandhassani21/rsna-knee-model-bundle",
+    "shingo257/rsna-knee-trained-checkpoints-v1",
+    "starkhushi/rsna-knee-v6f2-weights",
     "tim9510019/rsna-knee-v34-master-models"
   ],
   "competition_sources": [],
