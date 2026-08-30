@@ -81,7 +81,17 @@ stevenleehans, cf696666 and romantamrazov. Their original licenses still apply.
     (HERE / 'build_manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     with zipfile.ZipFile(HERE / 'rsna-knee-ensemble-v14.zip', 'w') as archive:
         for name in [metadata['code_file'], 'kernel-metadata.json', 'build_manifest.json', 'README.md', 'PLAN.md',
-                     'diagnostics.py', 'fusion.py', 'residual_specialist.py', 'confirm.py']:
+                     'diagnostics.py', 'fusion.py', 'residual_specialist.py', 'confirm.py',
+                     'RESULTS.md', 'KAGGLE_VALIDATION.md', 'gold_independent_verification.json',
+                     'gold_run_audit.json', 'verify_gold_artifacts.py', 'audit_gold_downloads.py',
+                     'compare_saved_outputs.py', 'rsna-knee-v14-gold-validation.ipynb',
+                     'gold_validation.py', 'gold_validation_manifest.json',
+                     'SPECIALIST_EXPERIMENT.md', 'patient_audit_result.json',
+                     'patient_metadata_audit.py', 'build_patient_audit.py',
+                     'test_patient_metadata_audit.py', 'rsna-knee-v14-patient-audit.ipynb',
+                     'clean_specialist.py', 'clean_features.py', 'build_clean_specialist.py',
+                     'clean_specialist_build.json', 'rsna-knee-v14-clean-specialist.ipynb',
+                     'verify_clean_specialist.py', 'test_clean_specialist.py', 'test_clean_artifacts.py']:
             entry = zipfile.ZipInfo(name, date_time=(2026, 8, 30, 0, 0, 0))
             entry.compress_type = zipfile.ZIP_DEFLATED
             archive.writestr(entry, (HERE / name).read_bytes())

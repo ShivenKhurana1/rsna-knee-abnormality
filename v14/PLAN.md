@@ -135,3 +135,42 @@ changes probabilities while preserving every ranking. Independently replay from
 saved raw predictions and validate AUC against scikit-learn. A changed CSV alone
 does not pass the improvement gate. Gold findings identify error-analysis
 priorities; they do not by themselves establish which targets were undertrained.
+
+### Completed experiment and evidence-driven next steps
+
+Version 346064640 completed in 12m 24s. All six saved candidates differ from the
+control in rankings across all 12 targets. Removing WideDense is the largest
+point gain: +0.001223, exploratory 95% CI [-0.001833, +0.004621], 450/696 changed
+values. This fails the +0.020 target and is not promoted. Full tables and source
+limits are in `RESULTS.md`; original downloads and paired scoring were checked
+independently against run receipts and scikit-learn.
+
+1. **Resolve exposure before optimizing fusion.** Stage-1 gold AUC is 0.995752
+   versus 0.959448 final, but the loaded-checkpoint audit found no explicit ID
+   lists across 34 unique paths. Obtain complete gradient-training and checkpoint/
+   calibration-selection manifests. If exclusions cannot be established, retrain
+   the relevant folds or use a genuinely external expert-labeled cohort. Do not
+   advertise the observed Stage-1-only +0.036303 as generalization.
+2. **Review the four measured weak areas.** PF OA 0.890605, lateral OA 0.916828,
+   synovitis 0.924731, lateral meniscus 0.929814. For each, review discordant
+   positive/negative pairs against original MRI, expert label definitions and
+   sequence/crop coverage. Count label ambiguity, missing coverage, crop misses
+   and genuine representation failures separately. Do not relabel from model
+   predictions or infer less training from lower AUC.
+3. **One specialist experiment, patient-separated.** After that review, prioritize
+   per-compartment/per-plane cartilage features for OA and region-aware features
+   for the fluid/meniscus errors only where review supports them. Compare a
+   residual head first, then targeted encoder fine-tuning if frozen features fail.
+   Use fold-local fitting, missing-label masks, two fixed seeds, frozen baseline
+   predictions and held-out patient groups. The current research component is
+   not a trained MRI model and requires a feature extractor and eligible data.
+4. **Freeze, confirm, then consider submission.** Promote only after one locked
+   recipe meets the independent +0.020 criterion, with all targets and patient-
+   grouped uncertainty reported. Repeat representative-scale runtime checks.
+   Final competition submission still needs authorization; none was made here.
+
+On the present gold cohort, even perfect PF OA alone can add only 0.009116 to
+macro AUC. PF OA + lateral OA + synovitis together have only 0.022320 of ceiling
+headroom. Therefore a +0.020 gain is a multi-target research objective, not a
+reasonable promise from a single small blend adjustment. These ceilings describe
+this cohort only and do not forecast hidden-test gains.

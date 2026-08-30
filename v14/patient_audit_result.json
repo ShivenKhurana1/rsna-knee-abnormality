@@ -1,0 +1,40 @@
+{
+  "source": "https://www.kaggle.com/code/seanzhang2445/rsna-knee-v14-patient-audit?scriptVersionId=346132000",
+  "script_version_id": 346132000,
+  "run_status": "SUCCESSFUL_METADATA_AUDIT_ONLY",
+  "runtime_seconds": 241.4,
+  "accelerator": "None (CPU)",
+  "visibility": "Private",
+  "internet_enabled": false,
+  "uploaded_notebook_sha256": "d2cf3130f1f8b9003058a12e4822dd322f8e930f059502a1dcfba95875628f05",
+  "studies": 4407,
+  "series": 24371,
+  "headers_checked": 48742,
+  "sampling": "First and last DICOM header in every training series, not every slice",
+  "studies_with_usable_consistent_tags": 4407,
+  "patient_tag_groups": 4407,
+  "groups_with_multiple_studies": 0,
+  "issue_study_counts": {},
+  "gold_study_map_coverage": 58,
+  "original_artifacts_private_directory": "private_artifacts/patient_audit_346132000",
+  "downloaded_sha256": {
+    "patient_metadata_audit.json": "dd957b08822d7ca6f6c0b9ffb30cc4404525959979fd2e45028e63d45bab00ef",
+    "patient_tag_groups.csv": "83a1c3945988d83241319678dc815828e3d1fbb2b33b1276c2b3d38ecf091df4",
+    "private_study_audit.json": "af707b607331abedfa69dfaad95142a96cb3c0abedab00f5e57eee8eae5118f0"
+  },
+  "independent_local_checks": {
+    "map_hash_matches_remote_receipt": true,
+    "study_and_group_mapping_matches_all_private_records": true,
+    "study_ids_unique_and_groups_nonmissing_sha256_tokens": true,
+    "header_and_series_counts_recomputed": true,
+    "all_58_previously_downloaded_gold_ids_present": true
+  },
+  "tag_coverage_gate_passed": true,
+  "patient_identity_preservation_independently_verified": false,
+  "baseline_v13_exclusion_verified": false,
+  "new_specialist_training_performed": false,
+  "patient_held_out_accuracy_evaluation_performed": false,
+  "plus_0_02_verified": false,
+  "leaderboard_submission_performed": false,
+  "interpretation": "Usable anonymized PatientID tags exist, but all groups are single-study. This cannot distinguish one study per patient from per-exam re-anonymization. No patient-independent model gain is established."
+}

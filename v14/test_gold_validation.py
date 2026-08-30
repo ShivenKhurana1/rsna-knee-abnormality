@@ -1,4 +1,5 @@
 import contextlib
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -131,6 +132,29 @@ class GoldValidationTests(unittest.TestCase):
             self.assertFalse(result['plus_0_02_verified'])
             with self.assertRaisesRegex(ValueError, 'Mixed/stale'):
                 verify_gold_artifacts.verify(folder, 'different-version')
+
+    def test_original_downloads_require_version_and_content_hashes(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            names = ['gold_labels.csv', 'v13_gold_predictions.csv', 'stage3.csv']
+            names += [f'coatnet_arm_{i}_raw.csv' for i in range(3)]
+            frame = pd.DataFrame(np.zeros((58, 12)), columns=gold.GOLD_TARGETS)
+            frame.insert(0, gold.GOLD_UID, [str(i) for i in range(58)])
+            manifest = {'script_version': 'test-only', 'files': {}}
+            for name in names:
+                frame.to_csv(root / name, index=False)
+                manifest['files'][name] = {
+                    'artifact_path': '/kaggle-script-versions/test-only/output/' + name,
+                    'sha256': hashlib.sha256((root / name).read_bytes()).hexdigest()}
+            (root / 'download_manifest.json').write_text(json.dumps(manifest), encoding='utf-8')
+            frames, hashes, _ = verify_gold_artifacts.load_downloads(root, 'test-only')
+            self.assertEqual(len(frames['labels']), 58)
+            self.assertEqual(len(hashes), 6)
+            with self.assertRaisesRegex(ValueError, 'Mixed/stale'):
+                verify_gold_artifacts.load_downloads(root, 'other')
+            (root / names[0]).write_text('changed', encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'hash mismatch'):
+                verify_gold_artifacts.load_downloads(root, 'test-only')
 
 
 if __name__ == '__main__':

@@ -1,0 +1,153 @@
+{
+  "status": "EXPLORATORY_GOLD_SELECTED_NOT_CONFIRMATION",
+  "script_version": "346064640",
+  "source": "https://www.kaggle.com/code/seanzhang2445/rsna-knee-v14-gold-benchmark?scriptVersionId=346064640",
+  "studies": 58,
+  "receipt_hashes_verified": [
+    "coatnet_arm_0_raw.csv",
+    "coatnet_arm_1_raw.csv",
+    "coatnet_arm_2_raw.csv",
+    "gold_labels.csv",
+    "only_arm_0.csv",
+    "only_arm_1.csv",
+    "only_arm_2.csv",
+    "stage1.csv",
+    "stage2.csv",
+    "stage3.csv",
+    "v13_control.csv",
+    "v13_gold_predictions.csv",
+    "without_arm_0.csv",
+    "without_arm_1.csv",
+    "without_arm_2.csv"
+  ],
+  "stage1_members_completed": 24,
+  "coatnet_arms_completed": 3,
+  "checkpoint_load_observations": 57,
+  "unique_checkpoint_paths": 34,
+  "explicit_id_sets_found": 0,
+  "training_exclusion_verified": false,
+  "stage_results": {
+    "stage1": {
+      "macro_auc": 0.9957517007257679,
+      "target_auc": {
+        "ACL": 1.0,
+        "MCL": 1.0,
+        "Medial Meniscus": 1.0,
+        "Lateral Meniscus": 0.9937888198757764,
+        "Medial OA": 1.0,
+        "Lateral OA": 0.9845261121856866,
+        "PF OA": 0.9768339768339769,
+        "Effusion": 1.0,
+        "Synovitis": 0.995221027479092,
+        "Baker's": 1.0,
+        "Contusion": 0.9986504723346828,
+        "Fracture": 1.0
+      }
+    },
+    "stage2": {
+      "macro_auc": 0.9597234808520946,
+      "target_auc": {
+        "ACL": 0.9705882352941176,
+        "MCL": 0.9614512471655329,
+        "Medial Meniscus": 0.9711538461538461,
+        "Lateral Meniscus": 0.9080745341614906,
+        "Medial OA": 0.9875968992248062,
+        "Lateral OA": 0.9574468085106383,
+        "PF OA": 0.9202059202059202,
+        "Effusion": 0.9925465838509316,
+        "Synovitis": 0.953405017921147,
+        "Baker's": 0.9873188405797102,
+        "Contusion": 0.9541160593792173,
+        "Fracture": 0.9527777777777777
+      }
+    },
+    "stage3": {
+      "macro_auc": 0.9733337034158723,
+      "target_auc": {
+        "ACL": 0.9791666666666666,
+        "MCL": 0.9705215419501134,
+        "Medial Meniscus": 0.9951923076923077,
+        "Lateral Meniscus": 0.9515527950310559,
+        "Medial OA": 0.9883720930232558,
+        "Lateral OA": 0.9526112185686654,
+        "PF OA": 0.944015444015444,
+        "Effusion": 0.9975155279503105,
+        "Synovitis": 0.9713261648745519,
+        "Baker's": 0.9927536231884058,
+        "Contusion": 0.970310391363023,
+        "Fracture": 0.9666666666666667
+      }
+    },
+    "stage4": {
+      "macro_auc": 0.9594482823764294,
+      "target_auc": {
+        "ACL": 0.9810049019607843,
+        "MCL": 0.981859410430839,
+        "Medial Meniscus": 0.9903846153846154,
+        "Lateral Meniscus": 0.9298136645962732,
+        "Medial OA": 0.9782945736434109,
+        "Lateral OA": 0.9168278529980658,
+        "PF OA": 0.8906048906048906,
+        "Effusion": 0.9937888198757764,
+        "Synovitis": 0.9247311827956989,
+        "Baker's": 0.9864130434782609,
+        "Contusion": 0.9736842105263158,
+        "Fracture": 0.9659722222222222
+      }
+    }
+  },
+  "target_counts": {
+    "ACL": {
+      "positive": 24,
+      "negative": 34
+    },
+    "MCL": {
+      "positive": 9,
+      "negative": 49
+    },
+    "Medial Meniscus": {
+      "positive": 26,
+      "negative": 32
+    },
+    "Lateral Meniscus": {
+      "positive": 23,
+      "negative": 35
+    },
+    "Medial OA": {
+      "positive": 15,
+      "negative": 43
+    },
+    "Lateral OA": {
+      "positive": 11,
+      "negative": 47
+    },
+    "PF OA": {
+      "positive": 21,
+      "negative": 37
+    },
+    "Effusion": {
+      "positive": 35,
+      "negative": 23
+    },
+    "Synovitis": {
+      "positive": 27,
+      "negative": 31
+    },
+    "Baker's": {
+      "positive": 12,
+      "negative": 46
+    },
+    "Contusion": {
+      "positive": 19,
+      "negative": 39
+    },
+    "Fracture": {
+      "positive": 18,
+      "negative": 40
+    }
+  },
+  "stage1_gain_over_final": 0.03630341834933848,
+  "stage1_warning": "Near-perfect gold AUC with unknown training exposure is NOT proof of generalization; do not promote stage1-only.",
+  "plus_0_02_verified": false,
+  "promoted": false
+}

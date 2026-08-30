@@ -1,0 +1,61 @@
+{
+  "protocol": {
+    "name": "clean-dinov2-small-regional-pilot-v1",
+    "encoder": "facebook/dinov2-small",
+    "encoder_revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+    "encoder_frozen": true,
+    "expert_labels_only": true,
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "seed": 1401,
+    "regularization_grid": [
+      1.0,
+      0.1,
+      0.01
+    ],
+    "blend_grid": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "inner_auc_min_gain": 0.01,
+    "inner_bce_max_regression": 0.01,
+    "fixed_blend_weight": 0.25,
+    "focus_targets": [
+      "Lateral Meniscus",
+      "Lateral OA",
+      "PF OA",
+      "Synovitis"
+    ],
+    "image_size": 336,
+    "slices_per_series": 12,
+    "max_series_per_plane": 2,
+    "slice_quantiles": [
+      0.1,
+      0.9
+    ],
+    "planes": [
+      "Sagittal",
+      "Coronal",
+      "Axial"
+    ],
+    "regional_features": "All four image-coordinate patch quadrants, per plane; not anatomical segmentation",
+    "primary": "inner_selected_specialist",
+    "secondary": [
+      "fixed_25pct_specialist",
+      "regional_only_focus"
+    ],
+    "patient_identity_semantics_verified": false,
+    "exact_v13_comparator": false,
+    "untouched_confirmation": false,
+    "auto_promotion": false
+  },
+  "source_sha256": {
+    "diagnostics": "eb64dbb888411742a3e9c42393d3c4588e6e4bea4ef98f044dca02c6643ae0bb",
+    "clean_specialist": "639028f1f435f28589561e1265f784b4e4f372024271727932a62c5e837ecea1",
+    "clean_features": "0433e07294242178dbdce3474d37c85b8e066ea2b92d393a8b9e252795c96193"
+  },
+  "notebook_sha256": "987138b89010a70f99c91667022383fa2190eab164cabd607b7bb42c83e14800",
+  "executed": false
+}

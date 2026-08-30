@@ -1,11 +1,31 @@
-# V14: measured diagnostics and an unconfirmed specialist candidate
+# V14: completed diagnostics; +0.020 not demonstrated
 
 The requested **V13 +0.020 macro-AUC has not been achieved or verified**. No hidden-test
 score can be guaranteed. This folder deliberately separates runnable diagnostics,
 a trainable model component, synthetic tests, and actual knee-MRI accuracy evidence.
 
+The private Kaggle benchmark completed on 58 labeled studies: control AUC
+**0.959448**, best fixed arm ablation **0.960671** (delta **+0.001223**, exploratory
+95% interval **[-0.001833, +0.004621]**). All six saved candidate CSVs change
+rankings; the best changes **450/696** values. None meets the improvement gate.
+See `RESULTS.md`, `gold_independent_verification.json`, and `gold_run_audit.json`.
+These gold studies were used for checkpoint selection and training exclusion
+is unverified across the full ensemble. This is not a new leaderboard score.
+
 ## Deliverables
 
+- `rsna-knee-v14-clean-specialist.ipynb`: newly implemented private clean-reference
+  training pilot, not exact V13. Frozen external DINOv2 features, new general and
+  regional heads, five outer/three inner provisional PatientID-grouped folds.
+  The approved private GPU run is version **346135806**; feature extraction and
+  all five outer-fold fits have completed, with scoring/verification in progress.
+  See `SPECIALIST_EXPERIMENT.md` and
+  `clean_specialist_build.json`; verification code is `verify_clean_specialist.py`.
+- `SPECIALIST_EXPERIMENT.md`: recorded benchmark findings and the new specialist
+  experiment's data/provenance gates. CPU audit version 346132000 checked 48,742
+  DICOM headers across 4,407 studies; see `patient_audit_result.json`. Patient-tag
+  coverage passed, but repeat-patient identity preservation and V13 exclusions
+  remain unverified. Clean-reference training uses these groups provisionally.
 - `rsna-knee-v14-gold-validation.ipynb`: separate private, exploratory labeled
   validation run on Kaggle; see `KAGGLE_VALIDATION.md` for execution history and
   training-exposure caveats. It must not be submitted to the leaderboard.
@@ -91,6 +111,8 @@ Reproduce the saved-run analyses locally (private captures are git-ignored):
 python v14/compare_saved_outputs.py --v11 v14/private_artifacts/v11_submission_dom.json --v13 v14/private_artifacts/v13_submission_dom.json --output v14/output_comparison_rerun.json
 python v14/analyze_saved_runs.py --artifacts v14/private_artifacts --output v14/pipeline_comparison_rerun.json
 python v14/replay_saved_predictions.py --artifacts v14/private_artifacts --output v14/ablation_replay_rerun.json
+python v14/verify_gold_artifacts.py --captures v14/private_artifacts/gold_346064640 --script-version 346064640 --downloaded --output v14/gold_verification_rerun.json
+python v14/audit_gold_downloads.py --downloads v14/private_artifacts/gold_346064640 --script-version 346064640 --output v14/gold_audit_rerun.json
 ```
 
 ## Compare actual outputs

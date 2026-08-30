@@ -1,7 +1,7 @@
 {
   "recipe": "v14-v13-control-plus-paired-ablations-v1",
   "parent_v13_sha256": "9f8e18ba2960d9b19880d28739a262e4614cdcd51739073555b8720207b820d6",
-  "builder_sha256": "cbfe8344ea5200cb925cf533bb247ebd3ed75d4b18b93e89df0a8944cd773456",
+  "builder_sha256": "c6e6f6f2b4cadadc114682cd3505ed70372718a317e7135e10e65a804ec6d2f1",
   "fusion_sha256": "c3f46b8af48251e4f00b80e22d2cc0d4831bde3c81150bda06e1f73aa2f99b33",
   "training_enabled": false,
   "orthodiffusion_in_final_blend": false,
@@ -10,7 +10,7 @@
   "submission_recipe_changed": false,
   "full_precision_csv_guard": true,
   "plus_0_02_verified": false,
-  "notebook_sha256": "2984670832a4e3c83c5a47facd48a843e9bfdcad915d5c0dbe816d1794fb428d",
+  "notebook_sha256": "cb0e4346044b50166fc4e82ffca4579930d0768b74a36bc2a0b102171aafb726",
   "cells": 41,
   "code_cells_compiled": 34,
   "kaggle_executed": false,
