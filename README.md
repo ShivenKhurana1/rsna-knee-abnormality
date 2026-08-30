@@ -118,4 +118,6 @@ is 3 studies, so correctness can be verified on CPU without spending GPU quota. 
     # then publish the checkpoint as a dataset and run the ensemble
     cd v9 && kaggle kernels push -p .
 
+See `local/` for running the training on your own GPU instead of Kaggle.
+
 Note that `train_p3` writes `raptor_ft_p3.pt` (279 MB); model weights are not committed here.
