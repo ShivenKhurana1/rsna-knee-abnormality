@@ -1,5 +1,7 @@
 # Running the training locally
 
+See [INSTRUCTIONS.md](INSTRUCTIONS.md) for the full step-by-step version.
+
 **You cannot produce a competition submission locally.** This is a code competition: the
 notebook must execute on Kaggle against the hidden test set, and a local checkout only ever
 sees the 3 public studies. What is worth doing locally is **training** — it needs no
