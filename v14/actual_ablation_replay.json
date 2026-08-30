@@ -1,0 +1,575 @@
+{
+  "scope": "REAL cached predictions on 3 visible studies; no new GPU run and no labels.",
+  "source": "https://www.kaggle.com/code/seanzhang2445/rsna-knee-ensemble-v13-input-contracts/output?scriptVersionId=345967510&select=submission.csv",
+  "control_max_absolute_error": 0.0,
+  "ablations": {
+    "only_arm_0": {
+      "studies": 3,
+      "values_exactly_equal": false,
+      "all_target_rankings_equal": false,
+      "targets": {
+        "ACL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "MCL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Medial Meniscus": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Lateral Meniscus": {
+          "max_absolute_change": 0.3333333333333333,
+          "mean_absolute_change": 0.2222222222222222,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Medial OA": {
+          "max_absolute_change": 0.33333333333333337,
+          "mean_absolute_change": 0.22222222222222224,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 1,
+          "candidate_unique_values": 3
+        },
+        "Lateral OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "PF OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Effusion": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "Synovitis": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Baker's": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Contusion": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "Fracture": {
+          "max_absolute_change": 0.16666666666666669,
+          "mean_absolute_change": 0.1111111111111111,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        }
+      },
+      "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement.",
+      "changed_numeric_cells": 6
+    },
+    "without_arm_0": {
+      "studies": 3,
+      "values_exactly_equal": false,
+      "all_target_rankings_equal": false,
+      "targets": {
+        "ACL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "MCL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Medial Meniscus": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Lateral Meniscus": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Medial OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 1,
+          "candidate_unique_values": 1
+        },
+        "Lateral OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "PF OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Effusion": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "Synovitis": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Baker's": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Contusion": {
+          "max_absolute_change": 0.16666666666666669,
+          "mean_absolute_change": 0.1111111111111111,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        },
+        "Fracture": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        }
+      },
+      "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement.",
+      "changed_numeric_cells": 2
+    },
+    "only_arm_1": {
+      "studies": 3,
+      "values_exactly_equal": false,
+      "all_target_rankings_equal": false,
+      "targets": {
+        "ACL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "MCL": {
+          "max_absolute_change": 0.16666666666666669,
+          "mean_absolute_change": 0.1111111111111111,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 2
+        },
+        "Medial Meniscus": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Lateral Meniscus": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Medial OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 1,
+          "candidate_unique_values": 1
+        },
+        "Lateral OA": {
+          "max_absolute_change": 0.16666666666666674,
+          "mean_absolute_change": 0.11111111111111112,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        },
+        "PF OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Effusion": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "Synovitis": {
+          "max_absolute_change": 0.16666666666666669,
+          "mean_absolute_change": 0.1111111111111111,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 2
+        },
+        "Baker's": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Contusion": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "Fracture": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        }
+      },
+      "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement.",
+      "changed_numeric_cells": 6
+    },
+    "without_arm_1": {
+      "studies": 3,
+      "values_exactly_equal": false,
+      "all_target_rankings_equal": false,
+      "targets": {
+        "ACL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "MCL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Medial Meniscus": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Lateral Meniscus": {
+          "max_absolute_change": 0.3333333333333333,
+          "mean_absolute_change": 0.2222222222222222,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Medial OA": {
+          "max_absolute_change": 0.33333333333333337,
+          "mean_absolute_change": 0.22222222222222224,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 1,
+          "candidate_unique_values": 3
+        },
+        "Lateral OA": {
+          "max_absolute_change": 0.16666666666666674,
+          "mean_absolute_change": 0.11111111111111112,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        },
+        "PF OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Effusion": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "Synovitis": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Baker's": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Contusion": {
+          "max_absolute_change": 0.16666666666666669,
+          "mean_absolute_change": 0.1111111111111111,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        },
+        "Fracture": {
+          "max_absolute_change": 0.16666666666666669,
+          "mean_absolute_change": 0.1111111111111111,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        }
+      },
+      "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement.",
+      "changed_numeric_cells": 10
+    },
+    "only_arm_2": {
+      "studies": 3,
+      "values_exactly_equal": false,
+      "all_target_rankings_equal": false,
+      "targets": {
+        "ACL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "MCL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Medial Meniscus": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Lateral Meniscus": {
+          "max_absolute_change": 0.33333333333333337,
+          "mean_absolute_change": 0.22222222222222224,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 1
+        },
+        "Medial OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 1,
+          "candidate_unique_values": 1
+        },
+        "Lateral OA": {
+          "max_absolute_change": 0.16666666666666674,
+          "mean_absolute_change": 0.11111111111111112,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        },
+        "PF OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Effusion": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "Synovitis": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Baker's": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Contusion": {
+          "max_absolute_change": 0.16666666666666669,
+          "mean_absolute_change": 0.1111111111111111,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        },
+        "Fracture": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        }
+      },
+      "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement.",
+      "changed_numeric_cells": 6
+    },
+    "without_arm_2": {
+      "studies": 3,
+      "values_exactly_equal": false,
+      "all_target_rankings_equal": false,
+      "targets": {
+        "ACL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "MCL": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Medial Meniscus": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Lateral Meniscus": {
+          "max_absolute_change": 0.16666666666666669,
+          "mean_absolute_change": 0.1111111111111111,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 2
+        },
+        "Medial OA": {
+          "max_absolute_change": 0.33333333333333337,
+          "mean_absolute_change": 0.22222222222222224,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 1,
+          "candidate_unique_values": 3
+        },
+        "Lateral OA": {
+          "max_absolute_change": 0.16666666666666674,
+          "mean_absolute_change": 0.11111111111111112,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        },
+        "PF OA": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Effusion": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "Synovitis": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Baker's": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 3,
+          "candidate_unique_values": 3
+        },
+        "Contusion": {
+          "max_absolute_change": 0.0,
+          "mean_absolute_change": 0.0,
+          "rank_changed_rows": 0,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 2
+        },
+        "Fracture": {
+          "max_absolute_change": 0.16666666666666669,
+          "mean_absolute_change": 0.1111111111111111,
+          "rank_changed_rows": 2,
+          "baseline_unique_values": 2,
+          "candidate_unique_values": 3
+        }
+      },
+      "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement.",
+      "changed_numeric_cells": 8
+    }
+  },
+  "best_candidate_selected": false,
+  "accuracy_improvement_measured": false,
+  "target_plus_0_02_achieved": false,
+  "inputs_sha256": {
+    "v13_coatnet_arm_0_raw_dom.json": "f4296a69159c0e9085dfc5b787ba362925366c1a9290bca9e72fc3d3dfe14a5d",
+    "v13_coatnet_arm_1_raw_dom.json": "ec544c4a302de02e8ca5e7cd4288126db5a622762a3130bec2d1317353c7d8af",
+    "v13_coatnet_arm_2_raw_dom.json": "5b45fd2572fde1d80e58fbc860882b324ad7eeb2149df28166bd2a9c0b3bd6c7",
+    "v13_stage3_dom.json": "892ed9d490cdb5c8869e3bd9edb0fb9f1b345343b9d983d50cdb75fb9029bf7e",
+    "v13_submission_dom.json": "fec1bfabd0eab5c6c6c62de2ddd1eb02e1353e2fdc61048551ed0946a6c5be19"
+  }
+}

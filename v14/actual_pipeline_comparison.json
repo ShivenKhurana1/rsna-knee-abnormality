@@ -1,0 +1,220 @@
+{
+  "scope": "REAL saved visible runs, n=3. Logged intermediate values are rounded. Final CSV DOM values retain displayed precision.",
+  "versions": {
+    "v11": 345726369,
+    "v13": 345967510
+  },
+  "sources": {
+    "v11": "https://www.kaggle.com/code/seanzhang2445/rsna-knee-ensemble-v11/output?scriptVersionId=345726369&select=submission.csv",
+    "v13": "https://www.kaggle.com/code/seanzhang2445/rsna-knee-ensemble-v13-input-contracts/output?scriptVersionId=345967510&select=submission.csv"
+  },
+  "v11": {
+    "complete_arms": [
+      "0",
+      "1",
+      "2"
+    ],
+    "stage4_seconds_rounded": 43,
+    "log_sha256": "13cbe51915c582282e006c261937bdb5fa771205e709c8bbc27473bb85ee9fcc",
+    "resized_window_reuse_logged": true
+  },
+  "v13": {
+    "complete_arms": [
+      "0",
+      "1",
+      "2"
+    ],
+    "stage4_seconds_rounded": 60,
+    "log_sha256": "453bbfab61ff30a6ef9c798d23de78085e298ef43e805927e8d73118c3a944d7",
+    "resized_window_reuse_logged": false
+  },
+  "logged_coatnet_blend_changed_cells": 6,
+  "logged_coatnet_blend_comparison": {
+    "studies": 3,
+    "values_exactly_equal": false,
+    "all_target_rankings_equal": false,
+    "targets": {
+      "ACL": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "MCL": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Medial Meniscus": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Lateral Meniscus": {
+        "max_absolute_change": 0.166667,
+        "mean_absolute_change": 0.111111,
+        "rank_changed_rows": 2,
+        "baseline_unique_values": 2,
+        "candidate_unique_values": 3
+      },
+      "Medial OA": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Lateral OA": {
+        "max_absolute_change": 0.166667,
+        "mean_absolute_change": 0.11111133333333334,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "PF OA": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Effusion": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Synovitis": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Baker's": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Contusion": {
+        "max_absolute_change": 0.166667,
+        "mean_absolute_change": 0.11111133333333334,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Fracture": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      }
+    },
+    "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement."
+  },
+  "final_submission_comparison": {
+    "studies": 3,
+    "values_exactly_equal": true,
+    "all_target_rankings_equal": true,
+    "targets": {
+      "ACL": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 2,
+        "candidate_unique_values": 2
+      },
+      "MCL": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Medial Meniscus": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Lateral Meniscus": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Medial OA": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 1,
+        "candidate_unique_values": 1
+      },
+      "Lateral OA": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 2,
+        "candidate_unique_values": 2
+      },
+      "PF OA": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Effusion": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 2,
+        "candidate_unique_values": 2
+      },
+      "Synovitis": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Baker's": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3,
+        "candidate_unique_values": 3
+      },
+      "Contusion": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 2,
+        "candidate_unique_values": 2
+      },
+      "Fracture": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 2,
+        "candidate_unique_values": 2
+      }
+    },
+    "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement."
+  },
+  "conclusion": "The intermediate CoAtNet blend changed but all final values/rankings on the visible studies stayed identical. Both runs completed all three arms.",
+  "hidden_test_predictions_available": false,
+  "real_auc_delta_measured": false,
+  "runtime_caveat": "43s/60s are logged Stage-4 visible-run durations, not controlled speed benchmarks or hidden-test estimates."
+}

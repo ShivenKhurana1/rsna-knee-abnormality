@@ -1,0 +1,38 @@
+{
+  "id": "seanzhang2445/rsna-knee-ensemble-v14-diagnostics",
+  "title": "RSNA Knee V14 Paired Diagnostics",
+  "code_file": "rsna-knee-ensemble-v14.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "antoinegg1/rsna-knee-e11-diverse-heads-v20",
+    "antoinegg1/rsna-knee-e9-radimagenet-heads-v15",
+    "dreaddevelopment/raptor-knee-maxspan",
+    "dreaddevelopment/raptor-knee-native384dense",
+    "dreaddevelopment/raptor-knee-widedense",
+    "marwanmath/resnet-50-radimagenet-marwan",
+    "mattiaangeli/knee-mri-fold-weights",
+    "mattiaangeli/rsna-knee-rad-calibration",
+    "mattiaangeli/rsna-knee-radimagenet-foldsv1-heads",
+    "pilkwang/rsna-knee-llm-labels",
+    "pilkwang/rsna-knee-weights",
+    "prvsiyan/rsna-knee-v52-radimagenet-heads-20260812",
+    "stevenleehans/rsna-knee-llm-report-labels",
+    "tonylica/rsna2026-models"
+  ],
+  "kernel_sources": [
+    "sofiaanjenje/rsna-knee-e11-train",
+    "sofiaanjenje/rsna-knee-e13-train"
+  ],
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
+  "model_sources": [
+    "metaresearch/dinov2/PyTorch/small/1"
+  ]
+}

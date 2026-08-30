@@ -1,0 +1,23 @@
+{
+  "scope": "Synthetic float32 serialization test, not knee-model accuracy",
+  "shape": [
+    58,
+    12
+  ],
+  "seed": 14,
+  "dtype": "float32",
+  "formats": {
+    "local_v13_default": {
+      "max_absolute_error": 2.9713439930745267e-08,
+      "cells_above_guard_tolerance": 696,
+      "passes_original_strict_guard": false,
+      "float32_values_recovered_exactly": true
+    },
+    "published_v13_and_corrected_v14": {
+      "max_absolute_error": 2.220446049250313e-16,
+      "cells_above_guard_tolerance": 0,
+      "passes_original_strict_guard": true,
+      "float32_values_recovered_exactly": true
+    }
+  }
+}

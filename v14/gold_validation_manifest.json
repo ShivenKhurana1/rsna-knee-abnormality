@@ -1,0 +1,11 @@
+{
+  "parent_v13_sha256": "9f8e18ba2960d9b19880d28739a262e4614cdcd51739073555b8720207b820d6",
+  "adapter_sha256": "b8ad2b4bc607240b8e8bdde0bea15255019bd5e5018966de81eb9bf805d1a472",
+  "builder_sha256": "e6256789ac2fd0db29bf8808c8d05b57c27da41a0c97f34b6210342b4da76ed0",
+  "scope": "EXPLORATORY_GOLD_SELECTED",
+  "training_enabled": false,
+  "submission_allowed": false,
+  "plus_0_02_verified": false,
+  "notebook_sha256": "f5338973ae8ef1316209fb23dc9e9dbc95f30cc739f4c035958127b008141c98",
+  "cells": 42
+}

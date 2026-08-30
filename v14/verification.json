@@ -1,0 +1,50 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "v14",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_auc_matches_sklearn_with_ties_and_missing (test_v14.DiagnosticTests.test_auc_matches_sklearn_with_ties_and_missing) ... ok\ntest_bad_schema_ids_coverage_and_probabilities (test_v14.DiagnosticTests.test_bad_schema_ids_coverage_and_probabilities) ... ok\ntest_exact_zero_comparison_after_row_reordering (test_v14.DiagnosticTests.test_exact_zero_comparison_after_row_reordering) ... ok\ntest_existing_report_never_overwritten (test_v14.DiagnosticTests.test_existing_report_never_overwritten) ... ok\ntest_known_perfect_gain (test_v14.DiagnosticTests.test_known_perfect_gain) ... ok\ntest_probability_changes_without_rank_changes (test_v14.DiagnosticTests.test_probability_changes_without_rank_changes) ... ok\ntest_small_group_count_rejected (test_v14.DiagnosticTests.test_small_group_count_rejected) ... ok\ntest_soft_and_single_class_labels_rejected (test_v14.DiagnosticTests.test_soft_and_single_class_labels_rejected) ... ok\ntest_overlap_and_weak_labels_rejected (test_v14.EvidenceTests.test_overlap_and_weak_labels_rejected) ... ok\ntest_exact_v13_formula_and_serialization (test_v14.FusionTests.test_exact_v13_formula_and_serialization) ... ok\ntest_export_never_mutates_control (test_v14.FusionTests.test_export_never_mutates_control) ... ok\ntest_monotone_arm_changes_disappear (test_v14.FusionTests.test_monotone_arm_changes_disappear) ... ok\ntest_single_row_and_missing_arms (test_v14.FusionTests.test_single_row_and_missing_arms) ... ok\ntest_build_is_deterministic_and_control_unchanged (test_v14.NotebookTests.test_build_is_deterministic_and_control_unchanged) ... ok\ntest_bad_features_and_regularization (test_v14.SpecialistTests.test_bad_features_and_regularization) ... ok\ntest_holdout_label_changes_cannot_change_own_fold_predictions (test_v14.SpecialistTests.test_holdout_label_changes_cannot_change_own_fold_predictions) ... ok\ntest_no_labels_exact_baseline_and_roundtrip (test_v14.SpecialistTests.test_no_labels_exact_baseline_and_roundtrip) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 2.183s\n\nOK\n"
+    },
+    {
+      "command": [
+        "v13/test_v13.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_cache_key_separates_geometry_and_studies (__main__.ContractTests.test_cache_key_separates_geometry_and_studies) ... ok\ntest_checkpoint_labels_and_resolution_checked (__main__.ContractTests.test_checkpoint_labels_and_resolution_checked) ... ok\ntest_copy_and_unknown_filename (__main__.ContractTests.test_copy_and_unknown_filename) ... ok\ntest_published_recipes (__main__.ContractTests.test_published_recipes) ... ok\ntest_actual_orchestration_routes_all_three_contracts_and_saves_raw (__main__.GeneratedTests.test_actual_orchestration_routes_all_three_contracts_and_saves_raw) ... ok\ntest_all_cells_compile_and_unexecuted (__main__.GeneratedTests.test_all_cells_compile_and_unexecuted) ... ok\ntest_failed_arm_not_blended_or_saved (__main__.GeneratedTests.test_failed_arm_not_blended_or_saved) ... ok\ntest_inputs_identical_and_archive_deterministic (__main__.GeneratedTests.test_inputs_identical_and_archive_deterministic) ... ok\ntest_maxspan_volume_exactly_matches_v12_on_synthetic_input (__main__.GeneratedTests.test_maxspan_volume_exactly_matches_v12_on_synthetic_input) ... ok\ntest_native_resize_receives_original_crop_directly (__main__.GeneratedTests.test_native_resize_receives_original_crop_directly) ... ok\ntest_other_stages_and_submission_gates_unchanged (__main__.GeneratedTests.test_other_stages_and_submission_gates_unchanged) ... ok\ntest_same_weights_and_fusion (__main__.GeneratedTests.test_same_weights_and_fusion) ... ok\ntest_series_sampling_matches_each_published_span (__main__.GeneratedTests.test_series_sampling_matches_each_published_span) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 2.498s\n\nOK\n"
+    },
+    {
+      "command": [
+        "v13/test_comparison.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_identical_predictions_exact_zero_paired_interval (__main__.ComparisonTests.test_identical_predictions_exact_zero_paired_interval) ... ok\ntest_known_auc_and_ties (__main__.ComparisonTests.test_known_auc_and_ties) ... ok\ntest_known_improvement (__main__.ComparisonTests.test_known_improvement) ... ok\ntest_partial_duplicate_soft_and_nonfinite_rejected (__main__.ComparisonTests.test_partial_duplicate_soft_and_nonfinite_rejected) ... ok\ntest_single_class_target_not_silently_dropped (__main__.ComparisonTests.test_single_class_target_not_silently_dropped) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.510s\n\nOK\n"
+    }
+  ],
+  "scope": "Regression tests; no real model accuracy assertion.",
+  "v14_source_sha256": {
+    "analyze_saved_runs.py": "9885f055e0000a440ef16924fb668dc5579df1c017c8f00264878d0056086c81",
+    "audit_and_benchmark.py": "ab2fd2444900df97d35c92ab7f9598901daf91049e3aae39d4a737e2397f4252",
+    "build_v14.py": "8405e977f6a7192b2289834ecd1c3756bf7e51e45647d404237e0447528cdf53",
+    "compare_saved_outputs.py": "28d6696f48cf2520921adb5d9eea8ac470d9f3980b2b96e47b7bfc183a24f845",
+    "confirm.py": "08ceb625824702404cff83d7d843c7cff86e1dbead107020a5067072a90f6aa1",
+    "diagnostics.py": "6f360a23c5b8c3fff312e779c87b599f3517ffdf91788e8cb674268e6559cfed",
+    "fusion.py": "c3f46b8af48251e4f00b80e22d2cc0d4831bde3c81150bda06e1f73aa2f99b33",
+    "replay_saved_predictions.py": "25d24f65b007deac47e0d68bbb05ed52b3f2bfb859df5312417a7d904fba6dea",
+    "residual_specialist.py": "5241f1735fac951eb86b69130314861db0ba8ed57723838ae7e9fb2f31febdce",
+    "test_v14.py": "15eb264a404da1d87543aad0855c40f6da09285620c3c3a0c395d7ccf9757f30",
+    "verify.py": "ea9c05bda08e2e5567eaa0ba655b22fffbfb10cf06470a4a11a277a2ea342f68"
+  }
+}

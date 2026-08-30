@@ -1,0 +1,233 @@
+{
+  "status": "NO_REAL_MODEL_ACCURACY_BENCHMARK_AVAILABLE",
+  "python": "3.14.2",
+  "numpy": "2.5.0",
+  "pandas": "3.0.5",
+  "scope": "Current local sources and synthetic tests only; remote scored-version equivalence not established.",
+  "source_audit": {
+    "v11": {
+      "sha256": "24c077b506bdfd57777e18c3b2cff6d4b77a792bb494766abc8d0683781b958f",
+      "coatnet_arms": [
+        {
+          "file": "raptor_ft_coatnet_v5_full_swa.pt",
+          "arch": "coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k",
+          "res": 384,
+          "w": 1.0
+        },
+        {
+          "file": "raptor_ft_coatnet_v10_full.pt",
+          "arch": "coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k",
+          "res": 384,
+          "w": 1.0
+        },
+        {
+          "file": "raptor_ft_coatnet_v4_full.pt",
+          "arch": "coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k",
+          "res": 384,
+          "w": 1.0
+        }
+      ],
+      "flat_coatnet_weight_half": true
+    },
+    "v12": {
+      "sha256": "1d6f252407130842758e05d0680232b4cc5d4649c5a543b54d65fb6aa38de60a",
+      "coatnet_arms": [
+        {
+          "file": "raptor_ft_coatnet_v5_full_swa.pt",
+          "arch": "coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k",
+          "res": 384,
+          "w": 1.0
+        },
+        {
+          "file": "raptor_ft_coatnet_v10_full.pt",
+          "arch": "coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k",
+          "res": 384,
+          "w": 1.0
+        },
+        {
+          "file": "raptor_ft_coatnet_v4_full.pt",
+          "arch": "coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k",
+          "res": 384,
+          "w": 1.0
+        }
+      ],
+      "flat_coatnet_weight_half": true
+    },
+    "v13": {
+      "sha256": "9f8e18ba2960d9b19880d28739a262e4614cdcd51739073555b8720207b820d6",
+      "coatnet_arms": [
+        {
+          "file": "raptor_ft_coatnet_v5_full_swa.pt",
+          "arch": "coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k",
+          "res": 384,
+          "w": 1.0
+        },
+        {
+          "file": "raptor_ft_coatnet_v10_full.pt",
+          "arch": "coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k",
+          "res": 384,
+          "w": 1.0
+        },
+        {
+          "file": "raptor_ft_coatnet_v4_full.pt",
+          "arch": "coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k",
+          "res": 384,
+          "w": 1.0
+        }
+      ],
+      "flat_coatnet_weight_half": true
+    },
+    "v11_v13_unchanged_stage1_to3_code_cells": [
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      35
+    ],
+    "coatnet_checkpoints_weights_identical": true
+  },
+  "rank_invariance_mechanism": {
+    "studies": 4349,
+    "values_exactly_equal": true,
+    "all_target_rankings_equal": true,
+    "targets": {
+      "ACL": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3792,
+        "candidate_unique_values": 3792
+      },
+      "MCL": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3798,
+        "candidate_unique_values": 3798
+      },
+      "Medial Meniscus": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3800,
+        "candidate_unique_values": 3800
+      },
+      "Lateral Meniscus": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3810,
+        "candidate_unique_values": 3810
+      },
+      "Medial OA": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3782,
+        "candidate_unique_values": 3782
+      },
+      "Lateral OA": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3819,
+        "candidate_unique_values": 3819
+      },
+      "PF OA": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3823,
+        "candidate_unique_values": 3823
+      },
+      "Effusion": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3785,
+        "candidate_unique_values": 3785
+      },
+      "Synovitis": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3827,
+        "candidate_unique_values": 3827
+      },
+      "Baker's": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3769,
+        "candidate_unique_values": 3769
+      },
+      "Contusion": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3800,
+        "candidate_unique_values": 3800
+      },
+      "Fracture": {
+        "max_absolute_change": 0.0,
+        "mean_absolute_change": 0.0,
+        "rank_changed_rows": 0,
+        "baseline_unique_values": 3777,
+        "candidate_unique_values": 3777
+      }
+    },
+    "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement.",
+    "scope": "SYNTHETIC monotone input perturbation; NOT V11/V13 MRI inference",
+    "max_raw_arm_probability_change": 0.24999999999718092
+  },
+  "cpu_rank_fusion": {
+    "studies": 4349,
+    "arms": 3,
+    "repetitions": 7,
+    "median_seconds": 0.03440579999005422,
+    "gpu_inference_measured": false
+  },
+  "auc_max_absolute_error_vs_sklearn": 1.1102230246251565e-16,
+  "synthetic_residual_head": {
+    "baseline_auc": 0.6912121074768689,
+    "candidate_oof_auc": 0.820340158673492,
+    "elapsed_seconds": 0.10861369996564463,
+    "group_folds": 5,
+    "scope": "Artificial omitted-feature signal; NOT knee data; NOT evidence for a Kaggle gain."
+  },
+  "r2_vs_r_squared_demo": {
+    "r_squared": 1.0,
+    "r2_score": -48.56783056018357
+  },
+  "arithmetic": {
+    "reconstruction_r_squared": 0.52678564,
+    "required_summed_target_auc_gain": 0.24,
+    "relative_reduction_in_one_minus_auc": 0.30769230769230793
+  },
+  "real_v14_auc": null,
+  "real_v14_minus_v13": null,
+  "goal_plus_0_02_achieved": false
+}

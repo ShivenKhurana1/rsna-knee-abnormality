@@ -1,0 +1,15 @@
+{
+  "source": "https://www.kaggle.com/code/seanzhang2445/rsna-knee-ensemble-v13-input-contracts?scriptVersionId=345967510",
+  "code_cells": 33,
+  "ast_identical_cells": 32,
+  "differences": [
+    {
+      "code_cell_index": 2,
+      "diff": "--- local\n+++ published\n@@ -46,7 +46,7 @@\n     path = _V13Path(path)\n     tmp = path.with_name(path.name + '.v13-' + _v13_uuid.uuid4().hex + '.tmp')\n     try:\n-        frame.to_csv(tmp, index=False)\n+        frame.to_csv(tmp, index=False, float_format='%.17g')\n         # Serialization is checked before replacing the last valid artifact.\n         restored = _v13_pd.read_csv(tmp, dtype={'StudyInstanceUID': str})\n         if list(restored.columns) != list(frame.columns) or len(restored) != len(frame):\n@@ -55,7 +55,7 @@\n             raise ValueError('CSV roundtrip study IDs changed')\n         columns = [column for column in frame.columns if column != 'StudyInstanceUID']\n         if not _v13_np.allclose(restored[columns].to_numpy(float), frame[columns].to_numpy(float),\n-                               atol=1e-12, rtol=1e-12):\n+                               atol=1e-12, rtol=1e-12, equal_nan=True):\n             raise ValueError('CSV roundtrip predictions changed')\n         _v13_os.replace(tmp, path)\n     finally:\n"
+    }
+  ],
+  "capture_sha256": "0debeee05246ded69fbf574df2d9fd2c313a951fee202563695d3055dde62969",
+  "complete_notebook_byte_parity_verified": false,
+  "conclusion": "Published V13 already uses %.17g CSV formatting and equal_nan=True. Local V13 does not. All other rendered code cells match by AST.",
+  "validation_adjustment": "V14 uses %.17g, retaining stricter NaN rejection; inference predictions must be finite."
+}
