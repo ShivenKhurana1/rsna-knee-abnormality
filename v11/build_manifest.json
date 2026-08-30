@@ -1,0 +1,13 @@
+{
+  "recipe": "v11-fixed-center-inference-guards-v1",
+  "v10_sha256": "d0594c2c4088c60defb08cafe9ab58d92ba18996ffdd89f9981a9697fe8c42a5",
+  "v9_sha256": "e90444f85aff7ff0f1b9889baa1121c9d78aeb26efd47326fd08862d6f26469d",
+  "helpers_sha256": "e57063439a030c21d3f053a3782501728c5198e174ae7c326cf6325a3f7a4d86",
+  "builder_sha256": "ae310e5da127cabc4eee6b8b466887b5ee03c39d752917949b5ec277bb87534d",
+  "training_enabled": false,
+  "orthodiffusion_in_final_blend": false,
+  "reported_baseline_auc": 0.935,
+  "measured_v11_auc": null,
+  "notebook_sha256": "24c077b506bdfd57777e18c3b2cff6d4b77a792bb494766abc8d0683781b958f",
+  "code_cells_compiled": 32
+}

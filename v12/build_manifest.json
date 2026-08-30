@@ -1,0 +1,15 @@
+{
+  "recipe": "v12-pretrained-submission-package-v1",
+  "parent_v11_sha256": "24c077b506bdfd57777e18c3b2cff6d4b77a792bb494766abc8d0683781b958f",
+  "builder_sha256": "3345db552845f5a06a843f8d58455c1e20ab847d9f5761466017df1c74bab2b0",
+  "submission_checks_sha256": "09bcc542d1b65b968e278b428eaf72bfc34575682acffefd2d1b9ef6d3a6f552",
+  "training_enabled": false,
+  "orthodiffusion_in_final_blend": false,
+  "reported_baseline_auc": 0.935,
+  "measured_v12_auc": null,
+  "notebook_sha256": "1d6f252407130842758e05d0680232b4cc5d4649c5a543b54d65fb6aa38de60a",
+  "cells": 40,
+  "code_cells_compiled": 33,
+  "kaggle_executed": false,
+  "kaggle_submitted": false
+}

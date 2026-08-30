@@ -155,3 +155,59 @@ wiring unknown. Given the already-established low payoff ceiling (~+0.001 even i
 reconstructed), further reconstruction attempts are not recommended as a priority; the
 `OrthoDiffusion` lead documented in `v12/PLAN.md` has a larger plausible payoff for the same or
 less effort.
+
+## Update 2026-08-29: OrthoDiffusion reconstruction — reopened, not yet admitted
+
+**Superseding investigation:** see the [OrthoDiffusion diagnostic audit](../v11/orthodiffusion_diagnosis.md).
+The user requested continued diagnosis using existing pretrained models, not new
+specialist training. Official source and historical cache code have now been found.
+The public re-upload's 257 tensor storage checksums/layouts match each official
+plane, with additional SHA-256 spot checks, and the schedule has been checked
+elementwise. The leading next comparisons are post-window/post-resize normalization,
+descriptor layout, and the fitted head's target-specific scaling. The actual
+reconstruction notebook is still required to identify its failing step.
+
+The earlier record below is retained as history, not the current conclusion:
+matching beta sums or a target AUC did not establish full reproduction; the receipt's
++0.0088 was against a different baseline, not a payoff bound; lower standalone AUC
+alone does not prove no possible ensemble benefit. Its recommendation to stop and
+prioritize plane permutations is superseded.
+
+The three orientation checkpoints load cleanly and are genuinely distinct. Series selection was
+also checked directly: 56-58/58 gold studies selected fluid-sensitive, fat-suppressed series in
+all three planes, with mean slice counts of 28-36. The diffusion beta schedule is not the mismatch:
+the checkpoint's embedded training buffer sums to `12.441496849`, while the reconstructed cosine
+schedule sums to `12.441496417` (agreement to six decimal places).
+
+The reconstructed model nevertheless fails the target-level receipt check:
+
+| target | reconstruction | receipt | gap |
+|---|---:|---:|---:|
+| Effusion | 0.8832 | 0.9578 | -0.0746 |
+| Baker's | 0.5417 | 0.7283 | -0.1866 |
+| PF OA | 0.6293 | 0.7310 | -0.1017 |
+| Lateral OA | 0.7660 | 0.8143 | -0.0483 |
+
+MCL reproduces exactly, and Medial Meniscus, Medial OA, and Fracture are within 0.005, so the
+implementation is not globally broken. The failure is concentrated in plane- and protocol-sensitive
+findings. That pattern is consistent with one or more unrecovered input conventions: orientation
+checkpoint labels, center-window definition, interpolation, DICOM intensity handling, or the exact
+four deterministic noise draws.
+
+About 15% of inspected series have non-unit `RescaleSlope` (up to roughly 8x). A slope and intercept
+that are constant across a whole series cancel under whole-volume affine min-max normalization;
+slice-varying rescale parameters would not. That remaining case has not been excluded, but it is not
+the leading explanation for the large, target-selective gaps.
+
+Most importantly, reconstructed Effusion AUC `0.8832` is below the deployed blend's `0.907`. The
+receipt's best-case projected contribution was only about `+0.0088` macro AUC even if reproduced.
+Therefore:
+
+- do not add the current OrthoDiffusion predictions;
+- classify the receipt as **not reproduced / inconclusive**, not disproven;
+- do not spend another broad search on it;
+- if revisited, permit only a bounded diagnostic: six plane permutations, several four-seed panels,
+  and a direct slice-wise rescale-parameter audit, with a predeclared stop after those tests.
+
+This is the same acceptance rule used for the DINO reconstruction: checkpoint loading is not proof of
+model reproduction, and plausible diversity from a mismatched pipeline is still error.

@@ -13,10 +13,14 @@ third-party weights. Everything mounts its inputs from Kaggle at run time; see e
 
 | Directory | What it is |
 |---|---|
-| `v5` … `v9`, `v9-flash`, `v10`, `v11`, `v12` | Successive submission notebooks (see below) |
+| `v5` … `v9`, `v9-flash`, `v10` | Successive submission notebooks (see below) |
+| `v11` | [Runnable pretrained V11 candidate](v11/README.md), regression tests, and accuracy/efficiency audits; AUC not yet measured |
+| `v12` | [Kaggle submission package](v12/README.md): self-contained notebook, input metadata, release ZIP and final-output checks |
+| `v13` | [Accuracy candidate](v13/README.md): checkpoint-specific CoAtNet input corrections, unchanged weights/blend, paired scoring tool; AUC unmeasured |
+| `research` | [Public-score/source audit](research/public_score_audit.md) and public notebook source downloader |
 | `variant_native` | A/B: stage-1 native pool vs public frontier |
 | `ckpt_probe` | **CPU-only** kernel that ranks every published checkpoint by reading `gold_auc` out of the `.pt` headers |
-| `oof_harness` | Out-of-fold evaluation at n=4,349 instead of the 58-study gate (README only; data not redistributed) |
+| `oof_harness` | CPU reconstruction and evaluation scripts at n=4,349 instead of the 58-study gate; data not redistributed |
 | `timing` | Per-stage runtime calibration using training studies as a pseudo test set |
 | `train_p0`, `train_p1` | Training feasibility measurement on Kaggle T4 |
 | `probe_arch`, `recon` | Attempt to reconstruct an unpublished model arm from its checkpoint |

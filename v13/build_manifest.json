@@ -1,0 +1,16 @@
+{
+  "recipe": "v13-per-checkpoint-coatnet-input-contracts-v1",
+  "parent_v12_sha256": "1d6f252407130842758e05d0680232b4cc5d4649c5a543b54d65fb6aa38de60a",
+  "builder_sha256": "035722abbe17eeef534e9199c8bef6aa425fca3155186cb577ea943c59413727",
+  "contracts_sha256": "353ac54d19c09bbed002fc08b56e31bc22ff7e41837a94163156e1f5955e3809",
+  "training_enabled": false,
+  "orthodiffusion_in_final_blend": false,
+  "reported_baseline_auc": 0.935,
+  "measured_v13_auc": null,
+  "blend_weights_changed": false,
+  "notebook_sha256": "9f8e18ba2960d9b19880d28739a262e4614cdcd51739073555b8720207b820d6",
+  "cells": 40,
+  "code_cells_compiled": 33,
+  "kaggle_executed": false,
+  "kaggle_submitted": false
+}
