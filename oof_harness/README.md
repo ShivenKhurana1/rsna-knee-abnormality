@@ -131,3 +131,27 @@ grading them jointly.
 
 Effort/payoff note: even a perfect reconstruction was worth about **+0.001** by the measured
 four-family analog. It was never a route to prize-level score.
+
+## Retry (2026-08-29): preprocessing fixes ruled out, not confirmed
+
+Three fixes suggested by an independently-published fork of the same lineage
+(`anhadmahajan06`'s notebook) were applied to `recon/rsna-knee-recon.ipynb` and re-run on Kaggle
+(`seanzhang2445/rsna-knee-recon`, kernel version 1): per-slot (not per-slice) intensity
+normalisation, `slot_min_coverage`-gated series selection, and geometric laterality
+canonicalisation (median DICOM-geometry centroid, +/-20mm threshold, mirror Right to the Left
+canonical layout).
+
+All three fixes were confirmed to actually engage (log: 5/6 slots filled on average, laterality
+resolved on all 12 studies -- 5 Right, 7 Left, 0 unresolved, each correctly mirrored). Result:
+**r=0.7258, mean|err|=0.0990** (best variant `none/add/scale=sqrt`) -- statistically
+indistinguishable from the original attempt's r=0.7192 given n=12 studies.
+
+**Conclusion: per-slice intensity normalisation was NOT the dominant cause of the r=0.72
+ceiling**, contrary to this document's earlier hypothesis. The remaining gap is more likely in
+the head-forward wiring itself (how `attn_gate` and `slot_prior` actually modulate the
+12-query-over-6-slot attention) rather than in preprocessing -- the original framing of this as
+"confounded: one signal, two unknowns" still holds, but this result shifts weight toward the
+wiring unknown. Given the already-established low payoff ceiling (~+0.001 even if perfectly
+reconstructed), further reconstruction attempts are not recommended as a priority; the
+`OrthoDiffusion` lead documented in `v12/PLAN.md` has a larger plausible payoff for the same or
+less effort.

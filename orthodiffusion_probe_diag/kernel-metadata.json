@@ -1,0 +1,15 @@
+{
+  "id": "seanzhang2445/rsna-knee-od-series-selection-diagnostic",
+  "title": "RSNA Knee OD Series Selection Diagnostic",
+  "code_file": "diag.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["cemdusenkalkan/orthodiffusion-ema-weights"],
+  "competition_sources": ["rsna-knee-abnormality-detection"],
+  "kernel_sources": [],
+  "model_sources": []
+}

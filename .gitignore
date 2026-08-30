@@ -15,6 +15,7 @@ submission*.csv
 *.parquet
 oof_harness/*.csv
 oof_harness/*.npy
+oof_harness/raw/
 
 # --- assistant / editor cruft ---
 CLAUDE.md

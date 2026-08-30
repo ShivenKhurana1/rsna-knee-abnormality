@@ -1,0 +1,22 @@
+{
+  "id": "seanzhang2445/rsna-knee-orthodiffusion-probe",
+  "title": "RSNA Knee OrthoDiffusion Probe",
+  "code_file": "rsna-knee-orthodiffusion-probe.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "cemdusenkalkan/orthodiffusion-ema-weights",
+    "prvsiyan/orthodiffusion-official-knee-mri-foundation",
+    "seanzhang2445/rsna-knee-teacher-ridge-assets"
+  ],
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
+  "kernel_sources": [],
+  "model_sources": [],
+  "machine_shape": "NvidiaTeslaT4"
+}
