@@ -1,0 +1,14 @@
+{
+  "id": "seanzhang2445/rsna-knee-v15-family-a-cache-gold",
+  "title": "RSNA Knee V15 Family A Gold Cache",
+  "code_file": "rsna-knee-v15-family-a-cache-gold.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [],
+  "competition_sources": ["rsna-knee-abnormality-detection"],
+  "model_sources": []
+}

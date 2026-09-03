@@ -1,0 +1,27 @@
+{
+  "mode": "gold",
+  "v13_cells_reused": [
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "cache_out_dir": "/kaggle/working/family_a_gold_cache",
+  "family_a_modules_embedded": [
+    "contract.py",
+    "labels.py",
+    "model.py",
+    "folds.py",
+    "losses.py",
+    "cache.py",
+    "engine.py",
+    "compare_oof.py",
+    "family_c_gate.py"
+  ],
+  "builder_sha256": "b3096890d732fcfda82a78bdbe8b267e1da2315d226cab0dac5da17fe8c2e868",
+  "submission_allowed": false,
+  "training_enabled": false,
+  "notebook_sha256": "2719d840afa30d7a71690d9ffb9f2fb7de4d0f3f5d9f1451b6c17592d1e10596",
+  "cells": 9
+}

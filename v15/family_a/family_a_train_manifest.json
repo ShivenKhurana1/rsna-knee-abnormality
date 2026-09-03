@@ -1,0 +1,73 @@
+{
+  "epochs": 10,
+  "k": 5,
+  "seed": 1400,
+  "patience": 4,
+  "policy": {
+    "ACL": {
+      "weight": 0.3,
+      "use_aux": true,
+      "reason": "gate passed: AUC CI lower=0.974, skill=0.592"
+    },
+    "MCL": {
+      "weight": 0.05500476190476211,
+      "use_aux": true,
+      "reason": "gate passed: AUC CI lower=0.888, skill=0.110, weight halved (small sample)"
+    },
+    "Medial Meniscus": {
+      "weight": 0.3,
+      "use_aux": true,
+      "reason": "gate passed: AUC CI lower=0.909, skill=0.482"
+    },
+    "Lateral Meniscus": {
+      "weight": 0.23670454545454567,
+      "use_aux": true,
+      "reason": "gate passed: AUC CI lower=0.741, skill=0.237"
+    },
+    "Medial OA": {
+      "weight": 0.3,
+      "use_aux": true,
+      "reason": "gate passed: AUC CI lower=0.839, skill=0.428"
+    },
+    "Lateral OA": {
+      "weight": 0.0,
+      "use_aux": false,
+      "reason": "gate failed: AUC CI lower=0.605, skill=-0.122"
+    },
+    "PF OA": {
+      "weight": 0.3,
+      "use_aux": true,
+      "reason": "gate passed: AUC CI lower=0.866, skill=0.392"
+    },
+    "Effusion": {
+      "weight": 0.13164952380952388,
+      "use_aux": true,
+      "reason": "gate passed: AUC CI lower=0.721, skill=0.132"
+    },
+    "Synovitis": {
+      "weight": 0.0,
+      "use_aux": false,
+      "reason": "gate failed: AUC CI lower=0.685, skill=-0.031"
+    },
+    "Baker's": {
+      "weight": 0.3,
+      "use_aux": true,
+      "reason": "gate passed: AUC CI lower=0.815, skill=0.499"
+    },
+    "Contusion": {
+      "weight": 0.0,
+      "use_aux": false,
+      "reason": "gate failed: AUC CI lower=0.666, skill=-0.130"
+    },
+    "Fracture": {
+      "weight": 0.0042843137254900965,
+      "use_aux": true,
+      "reason": "gate passed: AUC CI lower=0.616, skill=0.004"
+    }
+  },
+  "builder_sha256": "b3096890d732fcfda82a78bdbe8b267e1da2315d226cab0dac5da17fe8c2e868",
+  "submission_allowed": false,
+  "training_enabled": true,
+  "notebook_sha256": "84af26c6fc954d2f59ce71c9e17bf0959027922a620a8f0d126a6f1638d56764",
+  "cells": 5
+}

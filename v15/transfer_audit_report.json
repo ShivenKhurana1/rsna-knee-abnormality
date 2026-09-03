@@ -1,0 +1,433 @@
+{
+  "scope": "Stage L0 transfer audit. AUC is a ranking diagnostic, not an agreement or error rate. Point estimates from <=58 studies carry wide uncertainty; treat ci95=None as \"cannot be estimated reliably at this n\", not as zero evidence. Brier is reported only as a skill score against the per-target prevalence baseline, since raw Brier is not comparable across targets of differing prevalence. NON-INDEPENDENCE: if this audit's own output is used to choose which target/source pairs get auxiliary-loss weight, any later evaluation of that policy on this same 58-study cohort is exploratory, not independent confirmation -- the cohort selected the policy it is then used to score.",
+  "cohort_studies": 58,
+  "input_sha256": {
+    "gold_labels": "a3ca7df32d43ee7c683091162b1839ea8308d802bea3f2b437f4908d9cbcb079",
+    "report_source": "3c082a987939528a55202028f655bd6f9dc5c9e28eff5058bbae7ef088a9f144"
+  },
+  "bootstrap_seed": 1400,
+  "bootstrap_requested_replicates": 5000,
+  "targets": {
+    "ACL": {
+      "n_total": 58,
+      "n_addressed": 54,
+      "n_silent": 4,
+      "addressed_positive": 24,
+      "addressed_negative": 30,
+      "silent_positive": 0,
+      "silent_negative": 4,
+      "addressed_expert_prevalence": 0.4444444444444444,
+      "silent_expert_prevalence": 0.0,
+      "auc_all_retain_silent": {
+        "point": 0.9932598039215687,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.9770833333333333,
+          1.0
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.9923611111111111,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.973604634174848,
+          1.0
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.10068333333333333,
+        "prevalence_baseline_brier": 0.24691358024691362,
+        "skill_score": 0.5922325
+      },
+      "small_sample_warning": false
+    },
+    "MCL": {
+      "n_total": 58,
+      "n_addressed": 51,
+      "n_silent": 7,
+      "addressed_positive": 9,
+      "addressed_negative": 42,
+      "silent_positive": 0,
+      "silent_negative": 7,
+      "addressed_expert_prevalence": 0.17647058823529413,
+      "silent_expert_prevalence": 0.0,
+      "auc_all_retain_silent": {
+        "point": 0.963718820861678,
+        "valid_replicates": 4979,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.9042363221884498,
+          1.0
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.9576719576719577,
+        "valid_replicates": 4982,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.8883727536997886,
+          1.0
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.1293411764705882,
+        "prevalence_baseline_brier": 0.14532871972318342,
+        "skill_score": 0.11000952380952422
+      },
+      "small_sample_warning": true
+    },
+    "Medial Meniscus": {
+      "n_total": 58,
+      "n_addressed": 55,
+      "n_silent": 3,
+      "addressed_positive": 25,
+      "addressed_negative": 30,
+      "silent_positive": 1,
+      "silent_negative": 2,
+      "addressed_expert_prevalence": 0.45454545454545453,
+      "silent_expert_prevalence": 0.3333333333333333,
+      "auc_all_retain_silent": {
+        "point": 0.9543269230769231,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.8982142857142857,
+          0.992831541218638
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.964,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.9093561403508772,
+          0.9966397849462365
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.1283618181818182,
+        "prevalence_baseline_brier": 0.24793388429752056,
+        "skill_score": 0.48227399999999976
+      },
+      "small_sample_warning": false
+    },
+    "Lateral Meniscus": {
+      "n_total": 58,
+      "n_addressed": 50,
+      "n_silent": 8,
+      "addressed_positive": 22,
+      "addressed_negative": 28,
+      "silent_positive": 1,
+      "silent_negative": 7,
+      "addressed_expert_prevalence": 0.44,
+      "silent_expert_prevalence": 0.125,
+      "auc_all_retain_silent": {
+        "point": 0.8621118012422361,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.7403682559980513,
+          0.9571428571428572
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.8660714285714286,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.7413161057692308,
+          0.9626698532948532
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.18807599999999997,
+        "prevalence_baseline_brier": 0.24640000000000004,
+        "skill_score": 0.23670454545454567
+      },
+      "small_sample_warning": false
+    },
+    "Medial OA": {
+      "n_total": 58,
+      "n_addressed": 42,
+      "n_silent": 16,
+      "addressed_positive": 15,
+      "addressed_negative": 27,
+      "silent_positive": 0,
+      "silent_negative": 16,
+      "addressed_expert_prevalence": 0.35714285714285715,
+      "silent_expert_prevalence": 0.0,
+      "auc_all_retain_silent": {
+        "point": 0.9310077519379845,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.8201116647094041,
+          0.9958333333333333
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.9296296296296296,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.8394862604540023,
+          0.9909297052154195
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.13125714285714285,
+        "prevalence_baseline_brier": 0.22959183673469383,
+        "skill_score": 0.42830222222222214
+      },
+      "small_sample_warning": false
+    },
+    "Lateral OA": {
+      "n_total": 58,
+      "n_addressed": 37,
+      "n_silent": 21,
+      "addressed_positive": 10,
+      "addressed_negative": 27,
+      "silent_positive": 1,
+      "silent_negative": 20,
+      "addressed_expert_prevalence": 0.2702702702702703,
+      "silent_expert_prevalence": 0.047619047619047616,
+      "auc_all_retain_silent": {
+        "point": 0.8297872340425532,
+        "valid_replicates": 4996,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.6296881733462616,
+          0.9719579804842633
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.8185185185185185,
+        "valid_replicates": 4996,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.6046505376344087,
+          0.9702546296296296
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.22128378378378377,
+        "prevalence_baseline_brier": 0.19722425127830537,
+        "skill_score": -0.12199074074074057
+      },
+      "small_sample_warning": false
+    },
+    "PF OA": {
+      "n_total": 58,
+      "n_addressed": 44,
+      "n_silent": 14,
+      "addressed_positive": 18,
+      "addressed_negative": 26,
+      "silent_positive": 3,
+      "silent_negative": 11,
+      "addressed_expert_prevalence": 0.4090909090909091,
+      "silent_expert_prevalence": 0.21428571428571427,
+      "auc_all_retain_silent": {
+        "point": 0.9009009009009009,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.8069417735042735,
+          0.9732210497835496
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.9455128205128205,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.8656223060344828,
+          0.9978952850877193
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.14687272727272724,
+        "prevalence_baseline_brier": 0.24173553719008264,
+        "skill_score": 0.39242393162393174
+      },
+      "small_sample_warning": false
+    },
+    "Effusion": {
+      "n_total": 58,
+      "n_addressed": 56,
+      "n_silent": 2,
+      "addressed_positive": 35,
+      "addressed_negative": 21,
+      "silent_positive": 0,
+      "silent_negative": 2,
+      "addressed_expert_prevalence": 0.625,
+      "silent_expert_prevalence": 0.0,
+      "auc_all_retain_silent": {
+        "point": 0.853416149068323,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.7415591343222921,
+          0.9412917178542178
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.8394557823129252,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.7206406614219115,
+          0.9352620967741935
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.20351964285714283,
+        "prevalence_baseline_brier": 0.234375,
+        "skill_score": 0.13164952380952388
+      },
+      "small_sample_warning": false
+    },
+    "Synovitis": {
+      "n_total": 58,
+      "n_addressed": 56,
+      "n_silent": 2,
+      "addressed_positive": 26,
+      "addressed_negative": 30,
+      "silent_positive": 1,
+      "silent_negative": 1,
+      "addressed_expert_prevalence": 0.4642857142857143,
+      "silent_expert_prevalence": 0.5,
+      "auc_all_retain_silent": {
+        "point": 0.7903225806451613,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.6629775678192423,
+          0.8969710497835498
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.8076923076923077,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.6852540106951872,
+          0.9134651360544217
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.2565549107142857,
+        "prevalence_baseline_brier": 0.2487244897959184,
+        "skill_score": -0.03148230769230742
+      },
+      "small_sample_warning": false
+    },
+    "Baker's": {
+      "n_total": 58,
+      "n_addressed": 25,
+      "n_silent": 33,
+      "addressed_positive": 11,
+      "addressed_negative": 14,
+      "silent_positive": 1,
+      "silent_negative": 32,
+      "addressed_expert_prevalence": 0.44,
+      "silent_expert_prevalence": 0.030303030303030304,
+      "auc_all_retain_silent": {
+        "point": 0.9456521739130435,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.8605403525046382,
+          1.0
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.935064935064935,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.814935064935065,
+          1.0
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.12334000000000002,
+        "prevalence_baseline_brier": 0.24640000000000004,
+        "skill_score": 0.49943181818181814
+      },
+      "small_sample_warning": false
+    },
+    "Contusion": {
+      "n_total": 58,
+      "n_addressed": 45,
+      "n_silent": 13,
+      "addressed_positive": 18,
+      "addressed_negative": 27,
+      "silent_positive": 1,
+      "silent_negative": 12,
+      "addressed_expert_prevalence": 0.4,
+      "silent_expert_prevalence": 0.07692307692307693,
+      "auc_all_retain_silent": {
+        "point": 0.8306342780026991,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.7059174027924028,
+          0.933444335269993
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.8076131687242798,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.6659439539922551,
+          0.9243700721029153
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.27115333333333336,
+        "prevalence_baseline_brier": 0.24000000000000002,
+        "skill_score": -0.1298055555555555
+      },
+      "small_sample_warning": false
+    },
+    "Fracture": {
+      "n_total": 58,
+      "n_addressed": 35,
+      "n_silent": 23,
+      "addressed_positive": 17,
+      "addressed_negative": 18,
+      "silent_positive": 1,
+      "silent_negative": 22,
+      "addressed_expert_prevalence": 0.4857142857142857,
+      "silent_expert_prevalence": 0.043478260869565216,
+      "auc_all_retain_silent": {
+        "point": 0.7930555555555555,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.6268238450683303,
+          0.9345522162651967
+        ]
+      },
+      "auc_addressed_only": {
+        "point": 0.7875816993464052,
+        "valid_replicates": 5000,
+        "requested_replicates": 5000,
+        "ci95": [
+          0.6159985507246377,
+          0.9215686274509803
+        ]
+      },
+      "brier_addressed_only": {
+        "brier": 0.24872571428571427,
+        "prevalence_baseline_brier": 0.2497959183673469,
+        "skill_score": 0.0042843137254900965
+      },
+      "small_sample_warning": false
+    }
+  },
+  "decision_note": "This audit alone does not select target/source pairs for training. Promotion additionally requires the grouped-fold auxiliary-loss ablation in Run 4 of the V15 plan to show a cross-fitted expert-label gain, not just a favorable audit AUC."
+}

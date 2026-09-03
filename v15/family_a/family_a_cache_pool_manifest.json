@@ -1,0 +1,27 @@
+{
+  "mode": "pool",
+  "v13_cells_reused": [
+    9,
+    11,
+    12,
+    13,
+    14
+  ],
+  "cache_out_dir": "/kaggle/working/family_a_pool_cache",
+  "family_a_modules_embedded": [
+    "contract.py",
+    "labels.py",
+    "model.py",
+    "folds.py",
+    "losses.py",
+    "cache.py",
+    "engine.py",
+    "compare_oof.py",
+    "family_c_gate.py"
+  ],
+  "builder_sha256": "b3096890d732fcfda82a78bdbe8b267e1da2315d226cab0dac5da17fe8c2e868",
+  "submission_allowed": false,
+  "training_enabled": false,
+  "notebook_sha256": "691d95f5c3c2ce3068c24887d97771573ab156815591bcdca808810c61af348f",
+  "cells": 9
+}

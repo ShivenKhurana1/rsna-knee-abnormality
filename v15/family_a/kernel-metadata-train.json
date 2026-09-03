@@ -1,0 +1,15 @@
+{
+  "id": "seanzhang2445/rsna-knee-v15-family-a-train",
+  "title": "RSNA Knee V15 Family A Run 4 Training",
+  "code_file": "rsna-knee-v15-family-a-train.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": ["rsna-knee-abnormality-detection"],
+  "model_sources": ["metaresearch/dinov2/PyTorch/small/1"]
+}
