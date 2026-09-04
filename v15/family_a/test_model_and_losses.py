@@ -112,6 +112,18 @@ class CombinedLossTests(unittest.TestCase):
         total, parts = combined_loss(logits, y_expert, expert_mask, y_aux, aux_mask, aux_weight)
         self.assertEqual(float(total), 0.0)
 
+    def test_uniform_aux_weight_really_caps_auxiliary_loss(self):
+        logits = torch.zeros((2, len(TARGETS)))
+        zeros = torch.zeros_like(logits)
+        no_expert = torch.zeros_like(logits, dtype=torch.bool)
+        aux_mask = torch.ones_like(logits, dtype=torch.bool)
+        weights = torch.full((len(TARGETS),), 0.1)
+        total, parts = combined_loss(logits, zeros, no_expert, torch.ones_like(logits),
+                                     aux_mask, weights)
+        expected = 0.1 * torch.log(torch.tensor(2.0)).item()
+        self.assertAlmostEqual(parts['aux'], expected, places=6)
+        self.assertAlmostEqual(total.item(), expected, places=6)
+
 
 if __name__ == '__main__':
     unittest.main()

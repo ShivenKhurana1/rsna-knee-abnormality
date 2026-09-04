@@ -17,11 +17,13 @@
     "cache.py",
     "engine.py",
     "compare_oof.py",
-    "family_c_gate.py"
+    "family_c_gate.py",
+    "merge_shards.py",
+    "evaluate_submission_gain.py"
   ],
-  "builder_sha256": "b3096890d732fcfda82a78bdbe8b267e1da2315d226cab0dac5da17fe8c2e868",
+  "builder_sha256": "db110b20f0887b56443919f59d8b9bed8800d834e0768ad4a0dcfa8e1eefccaf",
   "submission_allowed": false,
   "training_enabled": false,
-  "notebook_sha256": "691d95f5c3c2ce3068c24887d97771573ab156815591bcdca808810c61af348f",
+  "notebook_sha256": "cfa978081ef2b502747bca9fdfcdac61ae26d26aa4bf5dfb65764b815f267566",
   "cells": 9
 }

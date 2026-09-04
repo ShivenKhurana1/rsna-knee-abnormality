@@ -36,6 +36,11 @@ def load_transfer_policy(transfer_audit_report_path):
     transfer_audit.py report. Every decision carries its numeric justification
     so the policy is auditable, not a hand-picked list."""
     report = json.loads(Path(transfer_audit_report_path).read_text(encoding='utf-8'))
+    return policy_from_audit(report)
+
+
+def policy_from_audit(report):
+    """Convert an in-memory transfer audit to the capped auxiliary policy."""
     policy = {}
     for t in TARGETS:
         d = report['targets'][t]
@@ -58,6 +63,41 @@ def load_transfer_policy(transfer_audit_report_path):
                      'reason': f'gate passed: AUC CI lower={ci_lower:.3f}, skill={skill:.3f}'
                                + (', weight halved (small sample)' if halved else '')}
     return policy
+
+
+def crossfit_transfer_policy(ids, train_idx, gold_labels, report_source,
+                             bootstrap=1000, seed=1400):
+    """Derive a policy using training-fold expert cases only.
+
+    This closes the policy-selection leak that occurs when a policy selected on
+    all 58 gold cases is evaluated on OOF predictions for those same cases.
+    """
+    try:
+        from transfer_audit import audit_target
+    except ModuleNotFoundError:  # repository-root test invocation
+        from v15.transfer_audit import audit_target
+
+    ids = np.asarray(ids, dtype=str)
+    train_ids = set(ids[np.asarray(train_idx, dtype=int)])
+    gold = gold_labels.set_index(UID) if UID in gold_labels.columns else gold_labels
+    report = report_source.set_index(UID) if UID in report_source.columns else report_source
+    if gold.index.duplicated().any() or report.index.duplicated().any():
+        raise ValueError('Duplicate study IDs cannot be used for cross-fitted policy selection')
+    selected = [uid for uid in gold.index.astype(str) if uid in train_ids]
+    if not selected:
+        raise ValueError('No training-fold expert cases available for policy selection')
+    if not set(selected).issubset(set(report.index.astype(str))):
+        raise ValueError('Training-fold expert cases are missing from report source')
+    y = gold.loc[selected, TARGETS].to_numpy(float)
+    p = report.loc[selected, TARGETS].to_numpy(float)
+    if not np.isin(y, [0.0, 1.0]).all():
+        raise ValueError('Cross-fitted policy requires fully binary expert labels')
+    targets = {t: audit_target(y[:, j], p[:, j], bootstrap=bootstrap,
+                               seed=seed + j)
+               for j, t in enumerate(TARGETS)}
+    audit = {'cohort_studies': len(selected), 'bootstrap': bootstrap,
+             'seed': seed, 'targets': targets}
+    return policy_from_audit(audit), audit
 
 
 def zero_policy():
@@ -107,7 +147,10 @@ def build_supervision(ids, gold_labels, report_source, policy, silent_value=SILE
 
     addressed = raw != silent_value
     use_aux = np.array([policy.get(t, {}).get('use_aux', False) for t in TARGETS])
-    aux_mask = addressed & use_aux[None, :]
+    # Expert truth takes precedence. Report supervision is used only for cells
+    # that do not already carry an expert label, avoiding contradictory double
+    # supervision on the 58 gold studies.
+    aux_mask = addressed & use_aux[None, :] & ~expert_mask
     y_aux = np.where(aux_mask, raw, np.nan)
     aux_weight = np.array([policy.get(t, {}).get('weight', 0.0) for t in TARGETS], dtype=float)
     return y_expert, expert_mask, y_aux, aux_mask, aux_weight

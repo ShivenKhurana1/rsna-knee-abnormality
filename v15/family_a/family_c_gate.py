@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 
-def evaluate_gate(seed_reports, min_macro_gain=0.0):
+def evaluate_gate(seed_reports, min_macro_gain=0.001):
     """seed_reports: list of >=2 compare_oof.py-style report dicts, one per
     training seed, each comparing the same two arms. PASS requires every seed's
     macro_delta to exceed min_macro_gain AND all seeds to agree in sign."""
@@ -53,7 +53,9 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--seed-reports', type=Path, nargs='+', required=True,
                    help='Two or more compare_oof.py JSON outputs, one per training seed')
-    p.add_argument('--min-macro-gain', type=float, default=0.0)
+    p.add_argument('--min-macro-gain', type=float, default=0.001,
+                   help='Required gain in both seeds; default matches the only measured useful '
+                        'diverse-family OOF effect in this repository')
     p.add_argument('--out', type=Path, required=True)
     args = p.parse_args()
     reports = [json.loads(path.read_text(encoding='utf-8')) for path in args.seed_reports]

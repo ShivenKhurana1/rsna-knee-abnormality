@@ -2,7 +2,17 @@
   "epochs": 10,
   "k": 5,
   "seed": 1400,
-  "patience": 4,
+  "patience": null,
+  "batch_size": 2,
+  "device_required": "cuda",
+  "amp_fp16": true,
+  "head_lr": 0.001,
+  "backbone_lr": 8e-06,
+  "weight_decay": 0.02,
+  "expert_fraction_in_auxiliary_training_rows": 0.1,
+  "sharding": "Set FAMILY_A_SHARD=0..9 for one seed/fold (recommended on T4), or FAMILY_A_SHARD=all on an unrestricted GPU host",
+  "auxiliary_policy_selection": "cross-fitted within each outer fold",
+  "epoch_selection": "fixed final epoch; no outer-fold early stopping",
   "policy": {
     "ACL": {
       "weight": 0.3,
@@ -65,9 +75,9 @@
       "reason": "gate passed: AUC CI lower=0.616, skill=0.004"
     }
   },
-  "builder_sha256": "b3096890d732fcfda82a78bdbe8b267e1da2315d226cab0dac5da17fe8c2e868",
+  "builder_sha256": "db110b20f0887b56443919f59d8b9bed8800d834e0768ad4a0dcfa8e1eefccaf",
   "submission_allowed": false,
   "training_enabled": true,
-  "notebook_sha256": "84af26c6fc954d2f59ce71c9e17bf0959027922a620a8f0d126a6f1638d56764",
+  "notebook_sha256": "737ed27bf14a7ba37a1f7c88505b085b54a8cf0992776685856a3bec2455efa7",
   "cells": 5
 }

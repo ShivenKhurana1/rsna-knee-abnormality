@@ -10,7 +10,7 @@ rather than silently presented as patient-safe splitting.
 import numpy as np
 
 
-def assign_folds(ids, k=5, seed=1400):
+def assign_folds(ids, k=5, seed=1400, priority_ids=None):
     if k < 2:
         raise ValueError('Need at least 2 folds')
     ids = list(ids)
@@ -19,13 +19,27 @@ def assign_folds(ids, k=5, seed=1400):
         raise ValueError(f'Need at least as many studies ({n}) as folds ({k})')
     if len(set(ids)) != n:
         raise ValueError('Duplicate study IDs cannot be assigned to folds')
+    priority_ids = set() if priority_ids is None else set(priority_ids)
+    unknown = priority_ids - set(ids)
+    if unknown:
+        raise ValueError(f'Priority set contains {len(unknown)} unknown study IDs')
     rng = np.random.default_rng(seed)
-    order = rng.permutation(n)
-    fold_of = np.empty(n, dtype=int)
-    fold_of[order] = np.arange(n) % k
+    priority = np.array([i for i, uid in enumerate(ids) if uid in priority_ids], dtype=int)
+    ordinary = np.array([i for i, uid in enumerate(ids) if uid not in priority_ids], dtype=int)
+    fold_of = np.full(n, -1, dtype=int)
+    fold_order = rng.permutation(k)
+    for j, row in enumerate(rng.permutation(priority)):
+        fold_of[row] = fold_order[j % k]
+    counts = np.bincount(fold_of[fold_of >= 0], minlength=k)
+    tie_order = {fold: rank for rank, fold in enumerate(fold_order)}
+    for row in rng.permutation(ordinary):
+        fold = min(range(k), key=lambda f: (counts[f], tie_order[f]))
+        fold_of[row] = fold
+        counts[fold] += 1
     return {
         'fold_assignment': dict(zip(ids, fold_of.tolist())),
         'k': k, 'seed': seed, 'n_studies': n,
+        'priority_studies_balanced': len(priority_ids),
         'grouping_caveat': ('Grouped by StudyInstanceUID, one study per group. Patient-level '
                             'grouping was not used: the repository\'s metadata audit found only '
                             'singleton patient groups, so patient-safe separation is unverified.'),
