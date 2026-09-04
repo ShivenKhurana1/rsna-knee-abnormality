@@ -23,7 +23,7 @@ class GeneratedNotebookTests(unittest.TestCase):
         self.assertIn("device='cuda'", code)
         self.assertIn('backbone_lr=8e-6', code)
         self.assertIn("crossfit_policy=(arm_name == 'auxiliary')", code)
-        self.assertIn("os.environ.get('FAMILY_A_SHARD', 'all')", code)
+        self.assertIn("os.environ.get('FAMILY_A_SHARD', '0')", code)
         self.assertIn('expert_fraction=0.10', code)
         for cell in notebook['cells']:
             if cell['cell_type'] == 'code':

@@ -220,7 +220,7 @@ out_dir = Path({out_dir!r})
 out_dir.mkdir(parents=True, exist_ok=True)
 pd.DataFrame({{UID: ids}}).to_csv(out_dir / 'all_study_ids.csv', index=False)
 pd.DataFrame({{UID: gold_ids}}).to_csv(out_dir / 'gold_study_ids.csv', index=False)
-shard_spec = os.environ.get('FAMILY_A_SHARD', 'all').strip().lower()
+shard_spec = os.environ.get('FAMILY_A_SHARD', '0').strip().lower()
 if shard_spec == 'all':
     jobs = [(seed_value, None, out_dir) for seed_value in [{seed}, {seed} + 1]]
 else:
@@ -284,8 +284,8 @@ def build_train_notebook(pool_cache, gold_cache, gold_labels_csv, transfer_audit
             'batch_size': batch_size, 'device_required': device, 'amp_fp16': True,
             'head_lr': 1e-3, 'backbone_lr': 8e-6, 'weight_decay': 0.02,
             'expert_fraction_in_auxiliary_training_rows': 0.10,
-            'sharding': ('Set FAMILY_A_SHARD=0..9 for one seed/fold (recommended on T4), '
-                         'or FAMILY_A_SHARD=all on an unrestricted GPU host'),
+            'sharding': ('Defaults to FAMILY_A_SHARD=0 for one safe T4 job. Set 0..9 for '
+                         'individual seed/folds, or explicitly set all on an unrestricted host'),
             'auxiliary_policy_selection': 'cross-fitted within each outer fold',
             'epoch_selection': 'fixed final epoch; no outer-fold early stopping', 'policy': policy,
             'builder_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),

@@ -88,9 +88,10 @@ checkpoint. Output is
 `/kaggle/working/family_a_run4/seed<N>/{baseline,auxiliary}/`, each with
 gold-only `*_oof.csv`, full-cohort `*_all_oof.csv`, and `*_receipt.json`.
 
-On an unrestricted GPU host, leave `FAMILY_A_SHARD` unset (the default `all`).
-On a time-limited T4, run ten independent jobs with `FAMILY_A_SHARD=0` through
-`9`. Shards `0..4` are seed 1400/folds `0..4`; shards `5..9` are seed
+The shipped notebook defaults to `FAMILY_A_SHARD=0`, a single safe T4 job. On a
+time-limited T4, run ten independent jobs with `FAMILY_A_SHARD=0` through `9`.
+On an unrestricted GPU host, explicitly set `FAMILY_A_SHARD=all`. Shards `0..4`
+are seed 1400/folds `0..4`; shards `5..9` are seed
 1401/folds `0..4`. Each job runs the matching baseline and auxiliary fold and
 writes a partial OOF plus a hash-bound receipt. Example:
 
