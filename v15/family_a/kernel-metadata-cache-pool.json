@@ -1,5 +1,5 @@
 {
-  "id": "seanzhang2445/rsna-knee-v15-family-a-cache-pool",
+  "id": "seanzhang2445/rsna-knee-v15-family-a-pool-cache",
   "title": "RSNA Knee V15 Family A Pool Cache",
   "code_file": "rsna-knee-v15-family-a-cache-pool.ipynb",
   "language": "python",
@@ -9,6 +9,8 @@
   "enable_tpu": false,
   "enable_internet": false,
   "dataset_sources": [],
-  "competition_sources": ["rsna-knee-abnormality-detection"],
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
   "model_sources": []
 }

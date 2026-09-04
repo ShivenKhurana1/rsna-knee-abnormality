@@ -1,5 +1,5 @@
 {
-  "id": "seanzhang2445/rsna-knee-v15-family-a-train",
+  "id": "seanzhang2445/rsna-knee-v15-family-a-run-4-training",
   "title": "RSNA Knee V15 Family A Run 4 Training",
   "code_file": "rsna-knee-v15-family-a-train.ipynb",
   "language": "python",
@@ -10,6 +10,14 @@
   "enable_internet": false,
   "machine_shape": "NvidiaTeslaT4",
   "dataset_sources": [],
-  "competition_sources": ["rsna-knee-abnormality-detection"],
-  "model_sources": ["metaresearch/dinov2/PyTorch/small/1"]
+  "kernel_sources": [
+    "seanzhang2445/rsna-knee-v15-family-a-pool-cache",
+    "seanzhang2445/rsna-knee-v15-family-a-gold-cache"
+  ],
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
+  "model_sources": [
+    "metaresearch/dinov2/PyTorch/small/1"
+  ]
 }

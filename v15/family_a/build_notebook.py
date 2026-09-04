@@ -164,8 +164,9 @@ _ROOT, WORK = prepare_gold(_real, Path('/kaggle/working/family_a_gold_prep'), '/
 
 
 def train_cell(pool_cache, gold_cache, gold_labels_csv, out_dir, policy_json,
-              epochs, k, seed, patience, dinov2_variant):
+              epochs, k, seed, patience, dinov2_variant, report_csv_text):
     return cell(f'''
+import io
 import json
 import pandas as pd
 from contract import TARGETS, UID
@@ -193,7 +194,7 @@ for src_dir, id_list in ((gold_cache, gold_ids), (pool_cache, pool_ids)):
         if not dst.exists():
             os.symlink((src_dir / f'{{uid}}.npz').resolve(), dst)
 
-report_source = pd.read_csv({V14_DIR.as_posix()!r} + '/external_labels/llm_labels_v2.csv', dtype={{UID: str}})
+report_source = pd.read_csv(io.StringIO({report_csv_text!r}), dtype={{UID: str}})
 auxiliary_policy = json.loads({policy_json!r})
 
 out_dir = Path({out_dir!r})
@@ -217,6 +218,7 @@ def build_train_notebook(pool_cache, gold_cache, gold_labels_csv, transfer_audit
     from labels import load_transfer_policy
     policy = load_transfer_policy(transfer_audit_report)
     policy_json = json.dumps(policy)
+    report_csv_text = (V14_DIR / 'external_labels' / 'llm_labels_v2.csv').read_text(encoding='utf-8')
 
     parent = json.loads(V13_NOTEBOOK.read_bytes())
     notebook = {'cells': [], 'metadata': {'kernelspec': parent['metadata']['kernelspec'],
@@ -230,7 +232,8 @@ def build_train_notebook(pool_cache, gold_cache, gold_labels_csv, transfer_audit
     notebook['cells'].append(cell(''.join(parent['cells'][11]['source'])))  # find_dinov2
     notebook['cells'].append(embed_modules_cell())
     notebook['cells'].append(train_cell(pool_cache, gold_cache, gold_labels_csv, out_dir,
-                                        policy_json, epochs, k, seed, patience, dinov2_variant))
+                                        policy_json, epochs, k, seed, patience, dinov2_variant,
+                                        report_csv_text))
     for i, c in enumerate(notebook['cells']):
         c['id'] = f'family-a-train-{i:03d}'
         if c['cell_type'] == 'code':
