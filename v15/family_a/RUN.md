@@ -16,6 +16,10 @@ All tests should pass. This exercises the entire pipeline shape (masking,
 checkpoint resume, fold coverage, OOF export, comparison, gate) on synthetic
 data. If this fails, nothing below will work either — fix it here first.
 
+The optional three-source label experiment is specified separately in
+`../LABEL_CONSENSUS_AUDIT.md`. Run its label-only gate before training any
+consensus-label image model; a public notebook title is not sufficient evidence.
+
 ## 1. Get the competition data reachable
 
 Either attach it the Kaggle way (`/kaggle/input/rsna-knee-abnormality-detection/`

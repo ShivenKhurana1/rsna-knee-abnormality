@@ -1,0 +1,26 @@
+{
+  "scope": "Coverage-only audit of exact three-source unanimity. No expert labels were available on this machine, so this artifact does not measure correctness or authorize training.",
+  "studies": 4407,
+  "input_sha256": {
+    "pilkwang_report_labels_v2": "6f704a7bdb2f894cc49445b19ba7c4378c3f548d3449e00361e10044bee40920",
+    "steven_llm_labels_v2": "3c082a987939528a55202028f655bd6f9dc5c9e28eff5058bbae7ef088a9f144",
+    "lixin_labels_llm_gpt56sol": "a79b05e609336811d51c97f9a48f00ea8004244a1a80fe886504a62bb39867ae"
+  },
+  "consensus_sha256": "0735fa6925f3e36d369d28d76dfee5f24e6b2a61344f16d7f636a18472d37b8e",
+  "targets": {
+    "ACL": {"unanimous_addressed": 3525, "steven_addressed": 4041, "retention": 0.872},
+    "MCL": {"unanimous_addressed": 3698, "steven_addressed": 3963, "retention": 0.933},
+    "Medial Meniscus": {"unanimous_addressed": 3314, "steven_addressed": 4163, "retention": 0.796},
+    "Lateral Meniscus": {"unanimous_addressed": 3347, "steven_addressed": 3967, "retention": 0.844},
+    "Medial OA": {"unanimous_addressed": 3002, "steven_addressed": 3511, "retention": 0.855},
+    "Lateral OA": {"unanimous_addressed": 2676, "steven_addressed": 3317, "retention": 0.807},
+    "PF OA": {"unanimous_addressed": 3354, "steven_addressed": 3644, "retention": 0.920},
+    "Effusion": {"unanimous_addressed": 3844, "steven_addressed": 3975, "retention": 0.967},
+    "Synovitis": {"unanimous_addressed": 607, "steven_addressed": 3989, "retention": 0.152},
+    "Baker's": {"unanimous_addressed": 2199, "steven_addressed": 2281, "retention": 0.964},
+    "Contusion": {"unanimous_addressed": 2421, "steven_addressed": 3349, "retention": 0.723},
+    "Fracture": {"unanimous_addressed": 1491, "steven_addressed": 2517, "retention": 0.592}
+  },
+  "decision": "PENDING_EXPERT_TRANSFER_AUDIT",
+  "notable_result": "Consensus retains 59%-97% of the single-source addressed cells for 11 targets, but only 15.2% for Synovitis. Precision versus the 58 expert labels is not known."
+}
