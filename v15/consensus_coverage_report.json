@@ -1,5 +1,5 @@
 {
-  "scope": "Coverage-only audit of exact three-source unanimity. No expert labels were available on this machine, so this artifact does not measure correctness or authorize training.",
+  "scope": "Coverage plus paired 58-study expert-label audit of exact three-source unanimity. This label-source result does not measure image-model or leaderboard gain.",
   "studies": 4407,
   "input_sha256": {
     "pilkwang_report_labels_v2": "6f704a7bdb2f894cc49445b19ba7c4378c3f548d3449e00361e10044bee40920",
@@ -21,6 +21,55 @@
     "Contusion": {"unanimous_addressed": 2421, "steven_addressed": 3349, "retention": 0.723},
     "Fracture": {"unanimous_addressed": 1491, "steven_addressed": 2517, "retention": 0.592}
   },
-  "decision": "PENDING_EXPERT_TRANSFER_AUDIT",
-  "notable_result": "Consensus retains 59%-97% of the single-source addressed cells for 11 targets, but only 15.2% for Synovitis. Precision versus the 58 expert labels is not known."
+  "expert_audit": {
+    "gold_sha256": "a3ca7df32d43ee7c683091162b1839ea8308d802bea3f2b437f4908d9cbcb079",
+    "gold_identity_check": "Exact byte-for-byte match to the original gold-label hash recorded by transfer_audit_report.json.",
+    "studies": 58,
+    "baseline": "steven_llm_labels_v2",
+    "baseline_macro_auc": 0.887349497764052,
+    "consensus_macro_auc": 0.835531265707964,
+    "paired_macro_delta": -0.0518182320560878,
+    "paired_macro_delta_ci95": [-0.0737008001068407, -0.0311103979596744],
+    "bootstrap_probability_better": 0.0,
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 1400,
+    "addressed_cells": {"baseline": 550, "consensus": 431},
+    "nonnegative_target_deltas": 2,
+    "target_deltas": {
+      "ACL": -0.06127450980392157,
+      "MCL": -0.054421768707483054,
+      "Medial Meniscus": -0.024639423076923128,
+      "Lateral Meniscus": 0.0031055900621117516,
+      "Medial OA": -0.054263565891472854,
+      "Lateral OA": -0.0029013539651837617,
+      "PF OA": -0.07915057915057921,
+      "Effusion": -0.168944099378882,
+      "Synovitis": -0.09796893667861406,
+      "Baker's": -0.021739130434782594,
+      "Contusion": -0.0748987854251012,
+      "Fracture": 0.015277777777777835
+    }
+  },
+  "promotion_gate": {
+    "delta_at_least_0.010": false,
+    "probability_better_at_least_0.90": false,
+    "at_least_8_of_12_target_deltas_nonnegative": false,
+    "retains_at_least_half_addressed_cells": true,
+    "no_target_decline_worse_than_0.05": false
+  },
+  "exploratory_convex_blend": {
+    "warning": "The full-cohort optimum is selection-biased and must not be reported as expected gain.",
+    "full_cohort_best_weights_steven_pilkwang_lixin": [0.4, 0.1, 0.5],
+    "full_cohort_apparent_delta": 0.005736267594837585,
+    "nested_global_weight_delta": -0.00965594533726577,
+    "nested_global_weight_ci95": [-0.02770096663319227, 0.008518914988013906],
+    "nested_global_weight_probability_better": 0.1402,
+    "nested_target_weight_delta": -0.010633128662901226,
+    "nested_target_weight_ci95": [-0.031885307515964925, 0.009743528800188517],
+    "nested_target_weight_probability_better": 0.1652,
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 1400
+  },
+  "decision": "REJECT_EXACT_THREE_SOURCE_CONSENSUS",
+  "notable_result": "Exact consensus loses 0.0518 macro AUC versus the current Steven source on the paired expert cohort; its public +0.022 claim does not survive this audit."
 }
