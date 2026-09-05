@@ -20,6 +20,10 @@ The optional three-source label experiment is specified separately in
 `../LABEL_CONSENSUS_AUDIT.md`. Run its label-only gate before training any
 consensus-label image model; a public notebook title is not sufficient evidence.
 
+Exact consensus has now failed that gate. If adding a third arm after the
+current baseline/raw-aux run, follow the leakage-safe fold-local calibration
+specification and promotion criteria in `../CALIBRATION_FIX.md`.
+
 ## 1. Get the competition data reachable
 
 Either attach it the Kaggle way (`/kaggle/input/rsna-knee-abnormality-detection/`
