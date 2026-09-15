@@ -74,8 +74,13 @@ def crossfit_transfer_policy(ids, train_idx, gold_labels, report_source,
     """
     try:
         from transfer_audit import audit_target
-    except ModuleNotFoundError:  # repository-root test invocation
-        from v15.transfer_audit import audit_target
+    except ModuleNotFoundError:  # local test invocation: transfer_audit.py lives in the parent v15/ dir
+        import sys
+        from pathlib import Path
+        parent = str(Path(__file__).resolve().parent.parent)
+        if parent not in sys.path:
+            sys.path.insert(0, parent)
+        from transfer_audit import audit_target
 
     ids = np.asarray(ids, dtype=str)
     train_ids = set(ids[np.asarray(train_idx, dtype=int)])

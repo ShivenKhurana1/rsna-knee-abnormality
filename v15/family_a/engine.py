@@ -273,14 +273,19 @@ def train_one_fold(model_fn, imgs, masks, y_expert, expert_mask, y_aux, aux_mask
             scaler.update()
             epoch_losses.append(parts)
 
+        mean_expert_loss = float(np.mean([p['expert'] for p in epoch_losses]))
+        mean_aux_loss = float(np.mean([p['aux'] for p in epoch_losses]))
         history.append({'epoch': epoch,
-                        'mean_expert_loss': float(np.mean([p['expert'] for p in epoch_losses])),
-                        'mean_aux_loss': float(np.mean([p['aux'] for p in epoch_losses])),
+                        'mean_expert_loss': mean_expert_loss,
+                        'mean_aux_loss': mean_aux_loss,
                         'training_row_instances': len(epoch_idx),
                         'expert_row_instances': expert_instances,
                         'expert_row_fraction': expert_instances / len(epoch_idx),
                         'outer_val_macro_auc': None,
                         'selection_note': 'outer labels not inspected during training'})
+        print(f'[{checkpoint_path.stem}] epoch {epoch + 1}/{epochs} '
+              f'expert_loss={mean_expert_loss:.4f} aux_loss={mean_aux_loss:.4f} '
+              f'rows={len(epoch_idx)} (expert={expert_instances})', flush=True)
         atomic_save(checkpoint_path, {'model': model.state_dict(), 'optimizer': optimizer.state_dict(),
                                       'scaler': scaler.state_dict(), 'epoch': epoch,
                                       'rng_state': rng_state(batch_rng), 'seed': seed,

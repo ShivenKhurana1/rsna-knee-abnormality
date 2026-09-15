@@ -21,9 +21,9 @@
     "merge_shards.py",
     "evaluate_submission_gain.py"
   ],
-  "builder_sha256": "5d8904ccea22cadeeb42708ecd8f2eabcb23637c2f4ae6bd28a93bab5c0a6ddc",
+  "builder_sha256": "86b46a72e4adb99f5f1feabb828c016aad824c788388988f40f0308d74bf54e2",
   "submission_allowed": false,
   "training_enabled": false,
-  "notebook_sha256": "918e8b94ae8db6f81989c57688a0d3053d2759f7c8bd9671655f56b7ee95fa00",
+  "notebook_sha256": "250b6e1763aea2a0886e15450e1ed88b96b3fb6f55500899d273fed94a0d2cd1",
   "cells": 9
 }

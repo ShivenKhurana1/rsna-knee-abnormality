@@ -75,9 +75,9 @@
       "reason": "gate passed: AUC CI lower=0.616, skill=0.004"
     }
   },
-  "builder_sha256": "5d8904ccea22cadeeb42708ecd8f2eabcb23637c2f4ae6bd28a93bab5c0a6ddc",
+  "builder_sha256": "86b46a72e4adb99f5f1feabb828c016aad824c788388988f40f0308d74bf54e2",
   "submission_allowed": false,
   "training_enabled": true,
-  "notebook_sha256": "38afd40a15ac04245ba80e15961e23133199b4ba0261154e651e190df3e59e49",
+  "notebook_sha256": "f8c922bf2a0dda09d28ebf42794e1733a12e7f12e8e3d9a25912ac9c64c915e9",
   "cells": 5
 }

@@ -123,7 +123,8 @@ def build_cache_notebook(mode, n_pool=None):
         setup = adapter + f'''
 _real = next((p for p in ({data_search} if (p / 'train.csv').is_file()), None)
 assert _real is not None, 'Attach RSNA Knee competition data, or set RSNA_DATA_ROOT'
-_ROOT, WORK = prepare_pool(_real, Path('/kaggle/working/family_a_pool_prep'), n={n}, temporary_parent='/kaggle/temp')
+_n_pool = int(os.environ.get('FAMILY_A_POOL_N', {n}))
+_ROOT, WORK = prepare_pool(_real, Path('/kaggle/working/family_a_pool_prep'), n=_n_pool, temporary_parent='/kaggle/temp')
 '''
         cache_out = '/kaggle/working/family_a_pool_cache'
     else:
@@ -220,6 +221,8 @@ out_dir = Path({out_dir!r})
 out_dir.mkdir(parents=True, exist_ok=True)
 pd.DataFrame({{UID: ids}}).to_csv(out_dir / 'all_study_ids.csv', index=False)
 pd.DataFrame({{UID: gold_ids}}).to_csv(out_dir / 'gold_study_ids.csv', index=False)
+_epochs = int(os.environ.get('FAMILY_A_EPOCHS', {epochs}))
+_batch_size = int(os.environ.get('FAMILY_A_BATCH_SIZE', {batch_size}))
 shard_spec = os.environ.get('FAMILY_A_SHARD', '0').strip().lower()
 if shard_spec == 'all':
     jobs = [(seed_value, None, out_dir) for seed_value in [{seed}, {seed} + 1]]
@@ -234,9 +237,9 @@ for seed_value, selected_folds, job_dir in jobs:
     for arm_name, policy in (('baseline', zero_policy()), ('auxiliary', auxiliary_policy)):
         arm_dir = job_dir / f'seed{{seed_value}}' / arm_name
         run_arm(arm_name, combined_cache, ids, gold_ids, gold_labels, report_source, policy,
-               arm_dir, make_model, k={k}, epochs={epochs}, seed=seed_value,
-               patience={patience}, batch_size={batch_size}, device={device!r}, amp=True,
-               prediction_batch_size={batch_size}, lr=1e-3, backbone_lr=8e-6,
+               arm_dir, make_model, k={k}, epochs=_epochs, seed=seed_value,
+               patience={patience}, batch_size=_batch_size, device={device!r}, amp=True,
+               prediction_batch_size=_batch_size, lr=1e-3, backbone_lr=8e-6,
                weight_decay=0.02, crossfit_policy=(arm_name == 'auxiliary'),
                policy_bootstrap=1000, policy_seed=1400, folds=selected_folds,
                expert_fraction=0.10)
