@@ -9,7 +9,10 @@
   "enable_tpu": false,
   "enable_internet": false,
   "machine_shape": "NvidiaTeslaT4",
-  "dataset_sources": [],
+  "dataset_sources": [
+    "pilkwang/rsna-knee-llm-labels",
+    "stevenleehans/rsna-knee-llm-report-labels"
+  ],
   "kernel_sources": [
     "seanzhang2445/rsna-knee-v15-family-a-pool-cache",
     "seanzhang2445/rsna-knee-v15-family-a-gold-cache"

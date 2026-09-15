@@ -22,7 +22,8 @@ V13_NOTEBOOK = HERE.parent.parent / 'v13' / 'rsna-knee-ensemble-v13.ipynb'
 V14_DIR = HERE.parent.parent / 'v14'
 V13_CELLS = [9, 11, 12, 13, 14]  # constants/helpers + slot selection + read_slot; NOT V13's own model
 FAMILY_A_MODULES = ['contract.py', 'labels.py', 'model.py', 'folds.py', 'losses.py',
-                     'cache.py', 'engine.py', 'compare_oof.py', 'family_c_gate.py']
+                     'cache.py', 'engine.py', 'compare_oof.py', 'family_c_gate.py',
+                     'merge_shards.py', 'evaluate_submission_gain.py']
 KAGGLE_SRC_DIR = '/kaggle/working/family_a_src'
 
 
@@ -44,6 +45,8 @@ def embed_modules_cell():
     for name in FAMILY_A_MODULES:
         content = (HERE / name).read_text(encoding='utf-8')
         lines.append(f"(_src / {name!r}).write_text({content!r}, encoding='utf-8')")
+    transfer_audit = (HERE.parent / 'transfer_audit.py').read_text(encoding='utf-8')
+    lines.append(f"(_src / 'transfer_audit.py').write_text({transfer_audit!r}, encoding='utf-8')")
     lines.append(f"sys.path.insert(0, {KAGGLE_SRC_DIR!r})")
     lines.append("print('family_a modules written to', _src)")
     return cell('\n'.join(lines))
@@ -115,7 +118,7 @@ def build_cache_notebook(mode, n_pool=None):
     Path('/kaggle/input/rsna-knee-abnormality-detection'),
     Path('data/rsna-knee-abnormality-detection'), Path('rsna-knee-abnormality-detection')]'''
     if mode == 'pool':
-        adapter = (V14_DIR / 'specialist_pool.py').read_text(encoding='utf-8')
+        adapter = (HERE / 'pool_adapter.py').read_text(encoding='utf-8')
         n = n_pool or 4349
         setup = adapter + f'''
 _real = next((p for p in ({data_search} if (p / 'train.csv').is_file()), None)
@@ -164,9 +167,10 @@ _ROOT, WORK = prepare_gold(_real, Path('/kaggle/working/family_a_gold_prep'), '/
 
 
 def train_cell(pool_cache, gold_cache, gold_labels_csv, out_dir, policy_json,
-              epochs, k, seed, patience, dinov2_variant, report_csv_text):
+              epochs, k, seed, patience, dinov2_variant, expected_report_sha256,
+              batch_size, device):
     return cell(f'''
-import io
+import hashlib
 import json
 import pandas as pd
 from contract import TARGETS, UID
@@ -180,6 +184,8 @@ def make_model():
 pool_cache = Path({pool_cache!r})
 gold_cache = Path({gold_cache!r})
 gold_labels = pd.read_csv({gold_labels_csv!r}, dtype={{UID: str}})
+for required in (pool_cache / 'manifest.json', gold_cache / 'manifest.json'):
+    assert required.is_file(), f'missing attached cache artifact: {{required}}'
 pool_ids = pd.read_csv(pool_cache / 'cached_ids.csv', dtype=str)[UID].tolist()
 gold_ids = pd.read_csv(gold_cache / 'cached_ids.csv', dtype=str)[UID].tolist()
 ids = gold_ids + pool_ids  # gold first so gold rows spread across folds deterministically
@@ -194,23 +200,57 @@ for src_dir, id_list in ((gold_cache, gold_ids), (pool_cache, pool_ids)):
         if not dst.exists():
             os.symlink((src_dir / f'{{uid}}.npz').resolve(), dst)
 
-report_source = pd.read_csv(io.StringIO({report_csv_text!r}), dtype={{UID: str}})
+expected_report_sha256 = {expected_report_sha256!r}
+report_candidates = []
+if os.environ.get('RSNA_REPORT_SOURCE'):
+    report_candidates.append(Path(os.environ['RSNA_REPORT_SOURCE']))
+for root in (Path('/kaggle/input'), Path('data')):
+    if root.exists():
+        report_candidates.extend(root.rglob('llm_labels_v2.csv'))
+        report_candidates.extend(root.rglob('report_labels_v2.csv'))
+report_path = next((p for p in report_candidates if p.is_file() and
+                    hashlib.sha256(p.read_bytes()).hexdigest() == expected_report_sha256), None)
+assert report_path is not None, ('Audited report-source CSV not found. Attach the exact file with SHA-256 '
+                                 + expected_report_sha256 + ' or set RSNA_REPORT_SOURCE.')
+report_source = pd.read_csv(report_path, dtype={{UID: str}})
+assert set(ids).issubset(set(report_source[UID])), 'report source does not cover every cached study'
 auxiliary_policy = json.loads({policy_json!r})
 
 out_dir = Path({out_dir!r})
-for seed_value in [{seed}, {seed} + 1]:
+out_dir.mkdir(parents=True, exist_ok=True)
+pd.DataFrame({{UID: ids}}).to_csv(out_dir / 'all_study_ids.csv', index=False)
+pd.DataFrame({{UID: gold_ids}}).to_csv(out_dir / 'gold_study_ids.csv', index=False)
+shard_spec = os.environ.get('FAMILY_A_SHARD', '0').strip().lower()
+if shard_spec == 'all':
+    jobs = [(seed_value, None, out_dir) for seed_value in [{seed}, {seed} + 1]]
+else:
+    shard_index = int(shard_spec)
+    assert 0 <= shard_index < 2 * {k}, f'FAMILY_A_SHARD must be all or 0..{{2 * {k} - 1}}'
+    seed_value = {seed} + shard_index // {k}
+    fold_value = shard_index % {k}
+    jobs = [(seed_value, [fold_value], out_dir / f'shard{{shard_index:02d}}')]
+
+for seed_value, selected_folds, job_dir in jobs:
     for arm_name, policy in (('baseline', zero_policy()), ('auxiliary', auxiliary_policy)):
-        arm_dir = out_dir / f'seed{{seed_value}}' / arm_name
+        arm_dir = job_dir / f'seed{{seed_value}}' / arm_name
         run_arm(arm_name, combined_cache, ids, gold_ids, gold_labels, report_source, policy,
-               arm_dir, make_model, k={k}, epochs={epochs}, seed=seed_value, patience={patience})
+               arm_dir, make_model, k={k}, epochs={epochs}, seed=seed_value,
+               patience={patience}, batch_size={batch_size}, device={device!r}, amp=True,
+               prediction_batch_size={batch_size}, lr=1e-3, backbone_lr=8e-6,
+               weight_decay=0.02, crossfit_policy=(arm_name == 'auxiliary'),
+               policy_bootstrap=1000, policy_seed=1400, folds=selected_folds,
+               expert_fraction=0.10)
         print(f'seed {{seed_value}} {{arm_name}} done -> {{arm_dir}}')
-print('DONE training both arms, both seeds. Run compare_oof.py and family_c_gate.py next.')
+if shard_spec == 'all':
+    print('DONE training both arms, both seeds. Run compare_oof.py and family_c_gate.py next.')
+else:
+    print(f'DONE shard {{shard_spec}}. Preserve this output and run the remaining shard indices.')
 ''')
 
 
 def build_train_notebook(pool_cache, gold_cache, gold_labels_csv, transfer_audit_report,
                          out_dir='/kaggle/working/family_a_run4', epochs=10, k=5, seed=1400,
-                         patience=4, dinov2_variant='small'):
+                         patience=None, dinov2_variant='small', batch_size=2, device='cuda'):
     """A second notebook, run after both cache notebooks finish, that trains both
     arms at both seeds using a real DINOv2 encoder. Assumes family_a_src/ has
     already been written by the cache notebook(s) in this Kaggle session; if
@@ -218,7 +258,8 @@ def build_train_notebook(pool_cache, gold_cache, gold_labels_csv, transfer_audit
     from labels import load_transfer_policy
     policy = load_transfer_policy(transfer_audit_report)
     policy_json = json.dumps(policy)
-    report_csv_text = (V14_DIR / 'external_labels' / 'llm_labels_v2.csv').read_text(encoding='utf-8')
+    transfer_report = json.loads(Path(transfer_audit_report).read_text(encoding='utf-8'))
+    expected_report_sha256 = transfer_report['input_sha256']['report_source']
 
     parent = json.loads(V13_NOTEBOOK.read_bytes())
     notebook = {'cells': [], 'metadata': {'kernelspec': parent['metadata']['kernelspec'],
@@ -233,13 +274,20 @@ def build_train_notebook(pool_cache, gold_cache, gold_labels_csv, transfer_audit
     notebook['cells'].append(embed_modules_cell())
     notebook['cells'].append(train_cell(pool_cache, gold_cache, gold_labels_csv, out_dir,
                                         policy_json, epochs, k, seed, patience, dinov2_variant,
-                                        report_csv_text))
+                                        expected_report_sha256, batch_size, device))
     for i, c in enumerate(notebook['cells']):
         c['id'] = f'family-a-train-{i:03d}'
         if c['cell_type'] == 'code':
             compile(''.join(c['source']), c['id'], 'exec')
             c['execution_count'], c['outputs'] = None, []
-    info = {'epochs': epochs, 'k': k, 'seed': seed, 'patience': patience, 'policy': policy,
+    info = {'epochs': epochs, 'k': k, 'seed': seed, 'patience': patience,
+            'batch_size': batch_size, 'device_required': device, 'amp_fp16': True,
+            'head_lr': 1e-3, 'backbone_lr': 8e-6, 'weight_decay': 0.02,
+            'expert_fraction_in_auxiliary_training_rows': 0.10,
+            'sharding': ('Defaults to FAMILY_A_SHARD=0 for one safe T4 job. Set 0..9 for '
+                         'individual seed/folds, or explicitly set all on an unrestricted host'),
+            'auxiliary_policy_selection': 'cross-fitted within each outer fold',
+            'epoch_selection': 'fixed final epoch; no outer-fold early stopping', 'policy': policy,
             'builder_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             'submission_allowed': False, 'training_enabled': True}
     notebook['metadata']['family_a_train'] = info
@@ -259,8 +307,9 @@ if __name__ == '__main__':
     report = HERE.parent / 'transfer_audit_report.json'
     if report.is_file():
         nb = build_train_notebook(
-            pool_cache='/kaggle/working/family_a_pool_cache', gold_cache='/kaggle/working/family_a_gold_cache',
-            gold_labels_csv='/kaggle/working/family_a_gold_prep/gold_labels.csv',
+            pool_cache='/kaggle/input/rsna-knee-v15-family-a-pool-cache/family_a_pool_cache',
+            gold_cache='/kaggle/input/rsna-knee-v15-family-a-gold-cache/family_a_gold_cache',
+            gold_labels_csv='/kaggle/input/rsna-knee-v15-family-a-gold-cache/family_a_gold_prep/gold_labels.csv',
             transfer_audit_report=report)
         print(f'Built train notebook with {len(nb["cells"])} cells')
     else:

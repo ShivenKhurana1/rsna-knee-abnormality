@@ -23,17 +23,16 @@ def masked_bce(logits, y, mask):
 
 def combined_loss(logits, y_expert, expert_mask, y_aux, aux_mask, aux_weight):
     """aux_weight: (T,) capped per-target scalar, broadcast across the batch and
-    multiplied into the per-cell auxiliary mask before averaging, so a target
-    with weight 0 (rejected by the transfer-gate policy, or the baseline arm
-    where every weight is 0) contributes exactly nothing -- not a small nonzero
-    push -- to the total loss."""
+    multiplied into the per-cell auxiliary loss. The denominator is the number
+    of valid cells, not the sum of weights; otherwise uniformly shrinking every
+    weight would cancel out and the nominal cap would not cap the loss."""
     expert_term = masked_bce(logits, y_expert, expert_mask)
     if aux_weight is None or float(aux_weight.abs().sum()) == 0.0:
         return expert_term, {'expert': float(expert_term.detach()), 'aux': 0.0}
     y_safe = torch.where(aux_mask, y_aux, torch.zeros_like(y_aux))
     per_cell = F.binary_cross_entropy_with_logits(logits, y_safe, reduction='none')
     weighted_mask = aux_mask.float() * aux_weight.unsqueeze(0)
-    denom = weighted_mask.sum()
+    denom = aux_mask.float().sum()
     aux_term = (per_cell * weighted_mask).sum() / denom if denom > 0 else logits.new_zeros(())
     total = expert_term + aux_term
     return total, {'expert': float(expert_term.detach()), 'aux': float(aux_term.detach())}

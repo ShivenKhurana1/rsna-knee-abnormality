@@ -8,7 +8,8 @@ import pandas as pd
 
 from contract import TARGETS, UID
 from folds import assign_folds
-from labels import build_supervision, load_transfer_policy, zero_policy, MAX_AUX_WEIGHT
+from labels import (MAX_AUX_WEIGHT, build_supervision, crossfit_transfer_policy,
+                    load_transfer_policy, zero_policy)
 
 
 def fake_transfer_report(overrides):
@@ -83,13 +84,35 @@ class ZeroPolicyTests(unittest.TestCase):
         self.assertTrue(all(not v['use_aux'] and v['weight'] == 0.0 for v in policy.values()))
 
 
+class CrossfitPolicyTests(unittest.TestCase):
+    def test_held_out_gold_cannot_change_training_fold_policy(self):
+        ids = [f'g{i:02d}' for i in range(24)] + ['pool']
+        values = np.fromfunction(lambda i, j: (i + j) % 2, (24, len(TARGETS)))
+        gold_a = pd.DataFrame(values, columns=TARGETS)
+        gold_a.insert(0, UID, ids[:24])
+        report_values = values * 0.8 + 0.1
+        report = pd.DataFrame(np.vstack([report_values, np.full((1, len(TARGETS)), 0.9)]),
+                              columns=TARGETS)
+        report.insert(0, UID, ids)
+        train_idx = np.arange(20)
+        policy_a, _ = crossfit_transfer_policy(ids, train_idx, gold_a, report,
+                                               bootstrap=100, seed=7)
+
+        gold_b = gold_a.copy()
+        gold_b.loc[20:, TARGETS] = 1 - gold_b.loc[20:, TARGETS]
+        policy_b, _ = crossfit_transfer_policy(ids, train_idx, gold_b, report,
+                                               bootstrap=100, seed=7)
+        self.assertEqual(policy_a, policy_b)
+        self.assertTrue(all(item['use_aux'] for item in policy_a.values()))
+
+
 class BuildSupervisionTests(unittest.TestCase):
     def _tables(self):
         ids = ['g1', 'g2', 'p1']
         gold = pd.DataFrame({UID: ['g1', 'g2'],
                              **{t: [1.0, 0.0] for t in TARGETS}})
         report = pd.DataFrame({UID: ids,
-                               **{t: [0.9, 0.5, 0.5] for t in TARGETS}})
+                               **{t: [0.9, 0.5, 0.9] for t in TARGETS}})
         return ids, gold, report
 
     def test_silence_is_masked_not_filled_negative(self):
@@ -99,9 +122,9 @@ class BuildSupervisionTests(unittest.TestCase):
         # g2's report value is 0.5 (silent) -> must be masked out, not treated as y_aux=0
         self.assertFalse(aux_mask[1, 0])
         self.assertTrue(np.isnan(y_aux[1, 0]))
-        # g1's report value is 0.9 (addressed) -> included
-        self.assertTrue(aux_mask[0, 0])
-        self.assertEqual(y_aux[0, 0], 0.9)
+        # p1 has no expert label and report value 0.9 -> included
+        self.assertTrue(aux_mask[2, 0])
+        self.assertEqual(y_aux[2, 0], 0.9)
 
     def test_expert_mask_only_true_for_gold_studies(self):
         ids, gold, report = self._tables()
@@ -110,6 +133,14 @@ class BuildSupervisionTests(unittest.TestCase):
         self.assertTrue(expert_mask[0].all())
         self.assertTrue(expert_mask[1].all())
         self.assertFalse(expert_mask[2].any())  # p1 has no gold label
+
+    def test_expert_cells_override_report_auxiliary_supervision(self):
+        ids, gold, report = self._tables()
+        policy = {t: {'use_aux': True, 'weight': 0.3} for t in TARGETS}
+        _, expert_mask, y_aux, aux_mask, _ = build_supervision(ids, gold, report, policy)
+        self.assertTrue(expert_mask[:2].all())
+        self.assertFalse(aux_mask[:2].any())
+        self.assertTrue(np.isnan(y_aux[:2]).all())
 
     def test_baseline_policy_masks_out_every_aux_cell(self):
         ids, gold, report = self._tables()
@@ -138,6 +169,20 @@ class AssignFoldsTests(unittest.TestCase):
         a = assign_folds(ids, k=4, seed=7)['fold_assignment']
         b = assign_folds(ids, k=4, seed=7)['fold_assignment']
         self.assertEqual(a, b)
+
+    def test_priority_subset_is_balanced_across_folds(self):
+        ids = [f'g{i}' for i in range(58)] + [f'p{i}' for i in range(137)]
+        priority = ids[:58]
+        info = assign_folds(ids, k=5, seed=7, priority_ids=priority)
+        gold_counts = np.bincount([info['fold_assignment'][uid] for uid in priority], minlength=5)
+        all_counts = np.bincount(list(info['fold_assignment'].values()), minlength=5)
+        self.assertLessEqual(gold_counts.max() - gold_counts.min(), 1)
+        self.assertLessEqual(all_counts.max() - all_counts.min(), 1)
+        self.assertEqual(info['priority_studies_balanced'], 58)
+
+    def test_rejects_unknown_priority_id(self):
+        with self.assertRaises(ValueError):
+            assign_folds(['a', 'b', 'c'], k=2, priority_ids=['missing'])
 
     def test_rejects_duplicate_ids(self):
         with self.assertRaises(ValueError):

@@ -1,4 +1,6 @@
+import tempfile
 import unittest
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -114,6 +116,16 @@ class AuditTargetTests(unittest.TestCase):
 
 
 class LoadAlignedTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.tmp_path = Path(self.tmp.name)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def paths(self, stem):
+        return self.tmp_path / f'{stem}_gold.csv', self.tmp_path / f'{stem}_source.csv'
+
     def test_rejects_duplicate_gold_ids(self):
         gold = frame([[0.] * 12, [1.] * 12], ids=['a', 'a'])
         with self.assertRaises(ValueError):
@@ -122,25 +134,28 @@ class LoadAlignedTests(unittest.TestCase):
     def test_rejects_gold_studies_missing_from_source(self):
         gold = frame([[0.] * 12, [1.] * 12], ids=['a', 'b'])
         source = frame([[0.5] * 12], ids=['a'])
-        gold.to_csv('/tmp/_v15_test_gold.csv', index=False)
-        source.to_csv('/tmp/_v15_test_source.csv', index=False)
+        gold_path, source_path = self.paths('missing')
+        gold.to_csv(gold_path, index=False)
+        source.to_csv(source_path, index=False)
         with self.assertRaises(ValueError):
-            load_aligned('/tmp/_v15_test_gold.csv', '/tmp/_v15_test_source.csv')
+            load_aligned(gold_path, source_path)
 
     def test_rejects_nonbinary_gold_labels(self):
         gold = frame([[0.5] * 12], ids=['a'])
         source = frame([[0.5] * 12], ids=['a'])
-        gold.to_csv('/tmp/_v15_test_gold2.csv', index=False)
-        source.to_csv('/tmp/_v15_test_source2.csv', index=False)
+        gold_path, source_path = self.paths('nonbinary')
+        gold.to_csv(gold_path, index=False)
+        source.to_csv(source_path, index=False)
         with self.assertRaises(ValueError):
-            load_aligned('/tmp/_v15_test_gold2.csv', '/tmp/_v15_test_source2.csv')
+            load_aligned(gold_path, source_path)
 
     def test_aligns_and_reorders_to_gold_index(self):
         gold = frame([[1.] * 12, [0.] * 12], ids=['b', 'a'])
         source = frame([[.5] * 12, [.9] * 12], ids=['a', 'b'])
-        gold.to_csv('/tmp/_v15_test_gold3.csv', index=False)
-        source.to_csv('/tmp/_v15_test_source3.csv', index=False)
-        ids, y, p = load_aligned('/tmp/_v15_test_gold3.csv', '/tmp/_v15_test_source3.csv')
+        gold_path, source_path = self.paths('reorder')
+        gold.to_csv(gold_path, index=False)
+        source.to_csv(source_path, index=False)
+        ids, y, p = load_aligned(gold_path, source_path)
         self.assertEqual(list(ids), ['b', 'a'])
         self.assertEqual(p[0, 0], .9)
         self.assertEqual(p[1, 0], .5)
@@ -159,9 +174,12 @@ class RunTests(unittest.TestCase):
         gold.insert(0, UID, ids)
         source = pd.DataFrame(p, columns=TARGETS)
         source.insert(0, UID, ids)
-        gold.to_csv('/tmp/_v15_test_gold_run.csv', index=False)
-        source.to_csv('/tmp/_v15_test_source_run.csv', index=False)
-        result = run('/tmp/_v15_test_gold_run.csv', '/tmp/_v15_test_source_run.csv', bootstrap=200)
+        with tempfile.TemporaryDirectory() as tmp:
+            gold_path = Path(tmp) / 'gold.csv'
+            source_path = Path(tmp) / 'source.csv'
+            gold.to_csv(gold_path, index=False)
+            source.to_csv(source_path, index=False)
+            result = run(gold_path, source_path, bootstrap=200)
         self.assertEqual(result['cohort_studies'], n)
         self.assertEqual(set(result['targets']), set(TARGETS))
         for t in TARGETS:
