@@ -1,0 +1,20 @@
+{
+  "mode": "gold",
+  "v13_cells_reused": [
+    9,
+    11,
+    12,
+    13,
+    14,
+    17,
+    18,
+    19
+  ],
+  "pool_studies": null,
+  "adapter_sha256": "b8ad2b4bc607240b8e8bdde0bea15255019bd5e5018966de81eb9bf805d1a472",
+  "builder_sha256": "3515da3b6f99b4e35de64d4a6dc290085a0b8620bd5af05a62653d9436e79080",
+  "submission_allowed": false,
+  "training_enabled": false,
+  "notebook_sha256": "45d4b766d010f9747b3b8f52bd1b425d11f9c2bf58b0d645adf35870ea1d9c5e",
+  "cells": 11
+}

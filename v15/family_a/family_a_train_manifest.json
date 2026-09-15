@@ -1,8 +1,8 @@
 {
-  "epochs": 10,
+  "epochs": 2,
   "k": 5,
   "seed": 1400,
-  "patience": 4,
+  "patience": 1,
   "policy": {
     "ACL": {
       "weight": 0.3,
@@ -65,9 +65,9 @@
       "reason": "gate passed: AUC CI lower=0.616, skill=0.004"
     }
   },
-  "builder_sha256": "b3096890d732fcfda82a78bdbe8b267e1da2315d226cab0dac5da17fe8c2e868",
+  "builder_sha256": "b09319bbcfdc93f13625632ce5121dd15ff66a20b044b8b95ee18b85fe565144",
   "submission_allowed": false,
   "training_enabled": true,
-  "notebook_sha256": "84af26c6fc954d2f59ce71c9e17bf0959027922a620a8f0d126a6f1638d56764",
+  "notebook_sha256": "98d6f6fa0aaead24c0410f52df0bc664ffa18618c3cf53a47b2dddd17f19091b",
   "cells": 5
 }

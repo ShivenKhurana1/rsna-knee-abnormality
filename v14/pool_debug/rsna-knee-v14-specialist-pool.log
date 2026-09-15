@@ -1,0 +1,37 @@
+[{"stream_name":"stderr","time":6.058024314,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.058094683,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.058101571,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.0581058819999996,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.612237917,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.612264986,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.6122696439999995,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.612273186,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.593377941,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":8.593407456,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":8.593413917,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":8.593420284,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":8.593465977,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":8.593645283,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":8.593739295,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":8.593746439,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":8.593750855,"data":"Exception encountered at \"In [1]\":\n"}
+,{"stream_name":"stderr","time":8.593754507,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":8.593757959,"data":"ModuleNotFoundError                       Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":8.593761459,"data":"/tmp/ipykernel_24/2138461893.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":8.593765147,"data":"     16 import pandas as pd\n"}
+,{"stream_name":"stderr","time":8.593768547,"data":"     17 \n"}
+,{"stream_name":"stderr","time":8.593771744,"data":"---\u003e 18 from diagnostics import TARGETS, UID\n"}
+,{"stream_name":"stderr","time":8.593775167,"data":"     19 \n"}
+,{"stream_name":"stderr","time":8.593778365,"data":"     20 \n"}
+,{"stream_name":"stderr","time":8.59378162,"data":"\n"}
+,{"stream_name":"stderr","time":8.59378484,"data":"ModuleNotFoundError: No module named 'diagnostics'\n"}
+,{"stream_name":"stderr","time":8.593788223,"data":"\n"}
+,{"stream_name":"stderr","time":10.608487588,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":10.608514336,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":10.750590979,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":10.750611555999999,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":11.371329905,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":11.671937041,"data":"[NbConvertApp] Writing 276092 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":14.056996452,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":15.802856177,"data":"[NbConvertApp] Writing 1486547 bytes to __results__.html\n"}
+]

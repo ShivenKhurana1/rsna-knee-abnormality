@@ -1,0 +1,60 @@
+[{"stream_name":"stderr","time":6.975231101,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.975286558,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.975290855,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.97529353,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.581962566,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.5819962400000005,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.5820019819999995,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.582006092,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":10.347049404,"data":"POOL AUDIT BEFORE INFERENCE: {\"status\": \"EXPLORATORY_NOT_INDEPENDENT_CONFIRMATION\", \"studies\": 500, \"cohort_definition\": \"Deterministic stride sample of 500 train.csv studies missing at least one of the 12 expert targets (i.e. excluded from gold).\", \"source_train_csv_sha256\": \"8ca2203c0e9d61c080c7a314c7cdb51c1b03a1d9eb4770819f7f34af53ef4e33\", \"labels_read\": false, \"training_enabled\": false, \"purpose\": \"Emit per-stage/per-arm frozen predictions as residual_specialist.py features; report-derived pseudo-labels are matched and applied locally, never inside this notebook.\"}\n"}
+,{"stream_name":"stdout","time":16.865248477,"data":"cuda:0 probe PASS (compute 7.5)\n"}
+,{"stream_name":"stdout","time":16.907872125,"data":"cuda:1 probe PASS (compute 7.5)\n"}
+,{"stream_name":"stdout","time":16.907922554,"data":"devices: ['cuda:0', 'cuda:1']\n"}
+,{"stream_name":"stdout","time":16.93451808,"data":"[    0.0s] input root: /kaggle/temp/v14-pool-fbjq8ed9/rsna-knee-abnormality-detection\n"}
+,{"stream_name":"stdout","time":16.943017582,"data":"[    0.0s] memory: 29.5 GB available, 13.3 GB to the cache; sizing for 4407 train + 1322 test studies -\u003e 1 group(s) of 3 = 3 slices per slot\n"}
+,{"stream_name":"stdout","time":16.943765238,"data":"[    0.0s] cache layout: 1 groups x 3 slices = 3 per slot\n"}
+,{"stream_name":"stdout","time":39.985316985,"data":"[   22.8s] backbone: 12 blocks, last 0 trainable (0.0M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":52.912368051,"data":"[   36.0s] feature extraction: 500 studies, 6 slots, dim 768\n"}
+,{"stream_name":"stdout","time":80.101401397,"data":"[   63.2s] features 16/500\n"}
+,{"stream_name":"stdout","time":112.800752813,"data":"[   95.9s] features 32/500\n"}
+,{"stream_name":"stdout","time":140.172672227,"data":"[  123.3s] features 48/500\n"}
+,{"stream_name":"stdout","time":165.818033793,"data":"[  148.9s] features 64/500\n"}
+,{"stream_name":"stdout","time":192.66121424,"data":"[  175.8s] features 80/500\n"}
+,{"stream_name":"stdout","time":226.90037795,"data":"[  210.0s] features 96/500\n"}
+,{"stream_name":"stdout","time":255.53526239,"data":"[  238.6s] features 112/500\n"}
+,{"stream_name":"stdout","time":286.387838097,"data":"[  269.5s] features 128/500\n"}
+,{"stream_name":"stdout","time":312.562289171,"data":"[  295.7s] features 144/500\n"}
+,{"stream_name":"stdout","time":342.284687381,"data":"[  325.4s] features 160/500\n"}
+,{"stream_name":"stdout","time":370.895075586,"data":"[  354.0s] features 176/500\n"}
+,{"stream_name":"stdout","time":395.35749205,"data":"[  378.4s] features 192/500\n"}
+,{"stream_name":"stdout","time":418.063104006,"data":"[  401.2s] features 208/500\n"}
+,{"stream_name":"stdout","time":449.769611736,"data":"[  432.9s] features 224/500\n"}
+,{"stream_name":"stdout","time":476.57799865,"data":"[  459.7s] features 240/500\n"}
+,{"stream_name":"stdout","time":501.336694626,"data":"[  484.4s] features 256/500\n"}
+,{"stream_name":"stdout","time":534.402846201,"data":"[  517.5s] features 272/500\n"}
+,{"stream_name":"stdout","time":559.255165271,"data":"[  542.4s] features 288/500\n"}
+,{"stream_name":"stdout","time":591.20832216,"data":"[  574.3s] features 304/500\n"}
+,{"stream_name":"stdout","time":619.244069802,"data":"[  602.3s] features 320/500\n"}
+,{"stream_name":"stdout","time":641.596937936,"data":"[  624.7s] features 336/500\n"}
+,{"stream_name":"stdout","time":667.888533969,"data":"[  651.0s] features 352/500\n"}
+,{"stream_name":"stdout","time":701.343637489,"data":"[  684.4s] features 368/500\n"}
+,{"stream_name":"stdout","time":726.299191266,"data":"[  709.4s] features 384/500\n"}
+,{"stream_name":"stdout","time":762.468979748,"data":"[  745.6s] features 400/500\n"}
+,{"stream_name":"stdout","time":799.100737254,"data":"[  782.2s] features 416/500\n"}
+,{"stream_name":"stdout","time":830.416810962,"data":"[  813.5s] features 432/500\n"}
+,{"stream_name":"stdout","time":862.206943086,"data":"[  845.3s] features 448/500\n"}
+,{"stream_name":"stdout","time":888.578958417,"data":"[  871.7s] features 464/500\n"}
+,{"stream_name":"stdout","time":917.674193057,"data":"[  900.8s] features 480/500\n"}
+,{"stream_name":"stdout","time":941.169532725,"data":"[  924.3s] features 496/500\n"}
+,{"stream_name":"stdout","time":949.472641564,"data":"[  932.6s] features 500/500\n"}
+,{"stream_name":"stdout","time":949.558504429,"data":"[  932.7s] saved image_features.npz: (500, 768), mean slots present 4.60/6\n"}
+,{"stream_name":"stdout","time":949.559945568,"data":"DONE, feature extraction only, DO NOT SUBMIT.\n"}
+,{"stream_name":"stderr","time":955.930316055,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":955.930345669,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":956.116457181,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":956.116486628,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":956.828123851,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":957.160764463,"data":"[NbConvertApp] Writing 59435 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":959.7016409,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":960.757624801,"data":"[NbConvertApp] Writing 483270 bytes to __results__.html\n"}
+]

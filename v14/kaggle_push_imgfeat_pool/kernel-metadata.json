@@ -1,0 +1,20 @@
+{
+  "id": "seanzhang2445/rsna-knee-v14-image-features-pool",
+  "title": "RSNA Knee V14 Image Features Pool",
+  "code_file": "rsna-knee-v14-image-features-pool.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
+  "model_sources": [
+    "metaresearch/dinov2/PyTorch/small/1"
+  ]
+}

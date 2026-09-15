@@ -1,0 +1,12 @@
+{
+  "parent_v13_sha256": "46cf60a7c721b6aefca38a2102e294f69c49a21fbcdfb4b10dd7e75ffc4fa353",
+  "adapter_sha256": "f2c1aaa06181dd62a2e23f80fd7b427e0c12df0d0f52d4b854ae4ea494f98034",
+  "builder_sha256": "1072c55155fcc9eed5f5c3f7355323d7f348039ad1da56c81d7d00c559eefae7",
+  "scope": "EXPLORATORY_TRAINING_POOL_FEATURES",
+  "pool_studies": 500,
+  "training_enabled": false,
+  "submission_allowed": false,
+  "plus_0_02_verified": false,
+  "notebook_sha256": "6ba1a83d1b29be946582419a6df70e808073a796386c11bb80acbbf3cb6526d4",
+  "cells": 41
+}

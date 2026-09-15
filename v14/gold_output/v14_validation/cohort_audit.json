@@ -1,0 +1,70 @@
+{
+  "status": "EXPLORATORY_NOT_INDEPENDENT_CONFIRMATION",
+  "studies": 58,
+  "cohort_definition": "All train.csv rows with all 12 expert targets present; no outcome filtering.",
+  "source_train_csv_sha256": "8ca2203c0e9d61c080c7a314c7cdb51c1b03a1d9eb4770819f7f34af53ef4e33",
+  "labels_sha256": "a3ca7df32d43ee7c683091162b1839ea8308d802bea3f2b437f4908d9cbcb079",
+  "test_inputs_contain_labels_or_reports": false,
+  "training_enabled": false,
+  "patient_grouping_verified": false,
+  "bootstrap_unit": "study (patient grouping unavailable)",
+  "coatnet_source_audit": {
+    "source": "https://www.kaggle.com/code/dreaddevelopment/knee-mri-training-the-twelve-finding-model",
+    "gradient_exclusion": "Author source excludes gold_ids from train_ids.",
+    "checkpoint_selection": "Gold AUC selects epochs/top-k/SWA; GOLD IS NOT UNTOUCHED.",
+    "actual_checkpoint_id_manifests": "Not independently verified by source alone."
+  },
+  "other_families": "Training/calibration exposure UNKNOWN unless explicit loaded metadata establishes it.",
+  "plus_0_02_verified": false,
+  "leaderboard_submission_allowed": false,
+  "counts": {
+    "ACL": {
+      "positive": 24,
+      "negative": 34
+    },
+    "MCL": {
+      "positive": 9,
+      "negative": 49
+    },
+    "Medial Meniscus": {
+      "positive": 26,
+      "negative": 32
+    },
+    "Lateral Meniscus": {
+      "positive": 23,
+      "negative": 35
+    },
+    "Medial OA": {
+      "positive": 15,
+      "negative": 43
+    },
+    "Lateral OA": {
+      "positive": 11,
+      "negative": 47
+    },
+    "PF OA": {
+      "positive": 21,
+      "negative": 37
+    },
+    "Effusion": {
+      "positive": 35,
+      "negative": 23
+    },
+    "Synovitis": {
+      "positive": 27,
+      "negative": 31
+    },
+    "Baker's": {
+      "positive": 12,
+      "negative": 46
+    },
+    "Contusion": {
+      "positive": 19,
+      "negative": 39
+    },
+    "Fracture": {
+      "positive": 18,
+      "negative": 40
+    }
+  }
+}

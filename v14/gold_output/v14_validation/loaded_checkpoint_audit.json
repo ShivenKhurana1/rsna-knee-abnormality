@@ -1,0 +1,467 @@
+{
+  "scope": "Observed metadata only; no missing-ID exclusion inference.",
+  "independent_confirmation_eligible": false,
+  "records": [
+    {
+      "path": "/kaggle/input/datasets/tonylica/rsna2026-models/rsna_20260807_v1.pt",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_e5427d6c21.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 25,
+        "config.fold": -1,
+        "config.seed": 2026
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_d47313baef.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 20,
+        "config.fold": -1,
+        "config.seed": 7717
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_ea3fbf6edf.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 31337
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_5f8ba4c5ea.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 29,
+        "config.fold": -1,
+        "config.seed": 20260808
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_013dc75703.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 29,
+        "config.fold": -1,
+        "config.seed": 2026
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_2f7e785e82.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 20260808
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_8baecb9d1b.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 7717
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_44bc3c6f14.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 20260808
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_44128e3ff3.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 60,
+        "config.fold": -1,
+        "config.seed": 2026
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_84079fe8cb.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 25,
+        "config.fold": -1,
+        "config.seed": 31337
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_ed427aa10a.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 31337
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_2dce50ebd9.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 7717
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_3d1f4c48fc.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 31337
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_91f171fe6f.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 7717
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_8476b29285.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 20260808
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_72081758ce.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 24,
+        "config.fold": -1,
+        "config.seed": 7717
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_7f8321affc.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 37,
+        "config.fold": -1,
+        "config.seed": 2026
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_1e553ba481.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 2026
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_b7c37cc80e.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 30,
+        "config.fold": -1,
+        "config.seed": 20260808
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/pilkwang/rsna-knee-weights/m_f335c812fe.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "epoch": 27,
+        "config.fold": -1,
+        "config.seed": 31337
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/models/metaresearch/dinov2/pytorch/small/1/pytorch_model.bin",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/mattiaangeli/knee-mri-fold-weights/m_f0.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "fold": 0
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/mattiaangeli/knee-mri-fold-weights/m_f1.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "fold": 1
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/mattiaangeli/knee-mri-fold-weights/m_f2.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "fold": 2
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/mattiaangeli/knee-mri-fold-weights/m_f3.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "fold": 3
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/mattiaangeli/knee-mri-fold-weights/m_f4.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "fold": 4
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/marwanmath/resnet-50-radimagenet-marwan/ResNet50.pt",
+      "explicit_id_sets": [],
+      "metadata": {},
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/prvsiyan/rsna-knee-v52-radimagenet-heads-20260812/v52_radimagenet_heads.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "version": "v52-radimagenet-resnet50-official-1",
+        "folds.0.fold": 0,
+        "folds.1.fold": 1,
+        "folds.2.fold": 2,
+        "folds.3.fold": 3,
+        "folds.4.fold": 4
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/antoinegg1/rsna-knee-e9-radimagenet-heads-v15/v52_radimagenet_heads.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "version": "v52-radimagenet-resnet50-official-1",
+        "folds.0.fold": 0,
+        "folds.1.fold": 1,
+        "folds.2.fold": 2,
+        "folds.3.fold": 3,
+        "folds.4.fold": 4
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/notebooks/sofiaanjenje/rsna-knee-e13-train/rsna_rad_e11/v52_e11_heads.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "version": "e11-radimagenet-resnet50-diverse-1",
+        "folds.0.fold": 0,
+        "folds.1.fold": 1,
+        "folds.2.fold": 2,
+        "folds.3.fold": 3,
+        "folds.4.fold": 4
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/dreaddevelopment/raptor-knee-maxspan/raptor_ft_coatnet_v5_full_swa.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "gold_auc": 0.9214481792385256
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/dreaddevelopment/raptor-knee-native384dense/raptor_ft_coatnet_v10_full.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "gold_auc": 0.917417598056954,
+        "epoch": 12
+      },
+      "exclusion_verified": false
+    },
+    {
+      "path": "/kaggle/input/datasets/dreaddevelopment/raptor-knee-widedense/raptor_ft_coatnet_v4_full.pt",
+      "explicit_id_sets": [],
+      "metadata": {
+        "gold_auc": 0.9167492483170476,
+        "epoch": 12
+      },
+      "exclusion_verified": false
+    }
+  ]
+}

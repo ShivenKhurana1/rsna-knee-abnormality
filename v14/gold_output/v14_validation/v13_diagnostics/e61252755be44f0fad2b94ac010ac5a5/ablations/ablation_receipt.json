@@ -1,0 +1,47 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "promoted": false,
+  "measured_auc": null,
+  "complete_arms": [
+    "raptor_ft_coatnet_v10_full.pt",
+    "raptor_ft_coatnet_v4_full.pt",
+    "raptor_ft_coatnet_v5_full_swa.pt"
+  ],
+  "baseline_sha256": "69cef8191c0ed5999d0e2099d63aeb12674bf62f75537d8f88df75bf7afd0673",
+  "candidates": {
+    "v13_control": {
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/v13_control.csv",
+      "sha256": "69cef8191c0ed5999d0e2099d63aeb12674bf62f75537d8f88df75bf7afd0673"
+    },
+    "only_arm_0": {
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/only_arm_0.csv",
+      "sha256": "79a677a8ad13322439ba71b2880a5a35b7bc2bd0d6aed6c19d7a043f9089cab1"
+    },
+    "without_arm_0": {
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/without_arm_0.csv",
+      "sha256": "6621232dfbacf1e5e173874e08c331f03cce836b7948b157c44d6d8bc0de0d09"
+    },
+    "only_arm_1": {
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/only_arm_1.csv",
+      "sha256": "df1f4a062fb73782e6ad479e7de0ebc7da5a6ceeb8de8a4ab9760116a959f443"
+    },
+    "without_arm_1": {
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/without_arm_1.csv",
+      "sha256": "9cd3b9cc151e655f8a60f400dfa6f487a777ba0d60783c309b6dd43625b77e3d"
+    },
+    "only_arm_2": {
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/only_arm_2.csv",
+      "sha256": "d65ec8764f468b21c9a2b1698132ea1d833b1d053131ecb2ad23c0d5219ee2c2"
+    },
+    "without_arm_2": {
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/without_arm_2.csv",
+      "sha256": "548f35c4efb8afa5959d24d420a8de239cb7286436b401441fbf4cbe87ddf244"
+    }
+  },
+  "v13_reproduced": true,
+  "arm_index": {
+    "0": "raptor_ft_coatnet_v10_full.pt",
+    "1": "raptor_ft_coatnet_v4_full.pt",
+    "2": "raptor_ft_coatnet_v5_full_swa.pt"
+  }
+}

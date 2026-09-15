@@ -22,6 +22,6 @@
   "builder_sha256": "b3096890d732fcfda82a78bdbe8b267e1da2315d226cab0dac5da17fe8c2e868",
   "submission_allowed": false,
   "training_enabled": false,
-  "notebook_sha256": "691d95f5c3c2ce3068c24887d97771573ab156815591bcdca808810c61af348f",
+  "notebook_sha256": "4544b133091292e7838c7b89118447ee076f8771c54ef7e53cd78f145e933063",
   "cells": 9
 }

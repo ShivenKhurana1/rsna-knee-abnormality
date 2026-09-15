@@ -1,0 +1,45 @@
+{
+  "e10_alpha": 0.5,
+  "e10_branch_preserved_targets_diagnostic_only": [
+    "Baker's",
+    "Fracture"
+  ],
+  "e10_tokens": 1360,
+  "e13_heads_sha256": "ad9f19af73bfdf4e49263c0e45060dc3cb239e1195039b26dc8c0a3a6bcd1a8a",
+  "e13_member_weight_inside_rad": 0.5,
+  "e13_tokens": 1808,
+  "encoder_sha256": "08629f7e7bd3e29b8ee9522ca3f65ce4d010a7ddf74f0ea3c7e3f3d0bbab0734",
+  "recipe": "V48 deployed reference branch: correct E13@0.50-inside-Rad -> E10@0.50 -> same E13 on E11 layout@0.15",
+  "reference_heads_sha256": "0f465649799ecfbccaac1767844639e7ced44e1bc9babde6e4bac7c5d9b89eaa",
+  "submission_sha256": "adfec77d47d1fcb6d9369171061f76d38c9b5349f1893edb82279a1e95cac345",
+  "test_studies": 58,
+  "v48_second_alpha": 0.15,
+  "v48_second_heads_sha256": "ad9f19af73bfdf4e49263c0e45060dc3cb239e1195039b26dc8c0a3a6bcd1a8a",
+  "v48_second_slots": [
+    [
+      "SAG_NOFS",
+      "Sagittal",
+      null,
+      false
+    ],
+    [
+      "COR_NOFS",
+      "Coronal",
+      null,
+      false
+    ],
+    [
+      "AX_NOFS",
+      "Axial",
+      null,
+      false
+    ],
+    [
+      "SAG_FS",
+      "Sagittal",
+      null,
+      true
+    ]
+  ],
+  "v48_second_tokens": 1360
+}

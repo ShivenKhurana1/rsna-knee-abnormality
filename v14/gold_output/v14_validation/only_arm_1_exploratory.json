@@ -1,0 +1,269 @@
+{
+  "scope": "Supplied cohort only. Not hidden-test performance; not proof of training exclusion.",
+  "baseline_macro_auc": 0.9594482823764294,
+  "candidate_macro_auc": 0.955071652945132,
+  "macro_delta": -0.004376629431297537,
+  "macro_delta_ci95": [
+    -0.009412550170732661,
+    0.00031794732192893686
+  ],
+  "point_gain_at_least_0_02": false,
+  "ci_lower_bound_at_least_0_02": false,
+  "bootstrap_unit": "study",
+  "independent_units": 58,
+  "valid_replicates": 2000,
+  "requested_replicates": 2000,
+  "seed": 1400,
+  "ci_caveat": "Paired percentile intervals; degenerate replicates excluded; not corrected for candidate selection.",
+  "targets": {
+    "ACL": {
+      "baseline_auc": 0.9810049019607843,
+      "candidate_auc": 0.9816176470588235,
+      "delta": 0.0006127450980392135,
+      "delta_ci95": [
+        0.0,
+        0.0036065340909091264
+      ],
+      "positive": 24,
+      "negative": 34,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.0015829248366013109
+    },
+    "MCL": {
+      "baseline_auc": 0.981859410430839,
+      "candidate_auc": 0.9739229024943311,
+      "delta": -0.007936507936507908,
+      "delta_ci95": [
+        -0.03045280612244898,
+        0.0
+      ],
+      "positive": 9,
+      "negative": 49,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.0015117157974300817
+    },
+    "Medial Meniscus": {
+      "baseline_auc": 0.9903846153846154,
+      "candidate_auc": 0.9891826923076923,
+      "delta": -0.0012019230769231282,
+      "delta_ci95": [
+        -0.014285714285714346,
+        0.009615384615384692
+      ],
+      "positive": 26,
+      "negative": 32,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.0008012820512820484
+    },
+    "Lateral Meniscus": {
+      "baseline_auc": 0.9298136645962732,
+      "candidate_auc": 0.9186335403726708,
+      "delta": -0.011180124223602483,
+      "delta_ci95": [
+        -0.03878857655502395,
+        0.012499999999999959
+      ],
+      "positive": 23,
+      "negative": 35,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.005848861283643897
+    },
+    "Medial OA": {
+      "baseline_auc": 0.9782945736434109,
+      "candidate_auc": 0.9875968992248062,
+      "delta": 0.009302325581395321,
+      "delta_ci95": [
+        0.0,
+        0.030771103896103887
+      ],
+      "positive": 15,
+      "negative": 43,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.00180878552971576
+    },
+    "Lateral OA": {
+      "baseline_auc": 0.9168278529980658,
+      "candidate_auc": 0.9032882011605415,
+      "delta": -0.013539651837524258,
+      "delta_ci95": [
+        -0.03543704710144926,
+        0.0
+      ],
+      "positive": 11,
+      "negative": 47,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.006931012250161184
+    },
+    "PF OA": {
+      "baseline_auc": 0.8906048906048906,
+      "candidate_auc": 0.8867438867438867,
+      "delta": -0.0038610038610038533,
+      "delta_ci95": [
+        -0.01838235294117641,
+        0.006752558479532198
+      ],
+      "positive": 21,
+      "negative": 37,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.00911625911625912
+    },
+    "Effusion": {
+      "baseline_auc": 0.9937888198757764,
+      "candidate_auc": 0.9975155279503105,
+      "delta": 0.003726708074534124,
+      "delta_ci95": [
+        0.0,
+        0.012632356382356375
+      ],
+      "positive": 35,
+      "negative": 23,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.0005175983436853012
+    },
+    "Synovitis": {
+      "baseline_auc": 0.9247311827956989,
+      "candidate_auc": 0.9133811230585425,
+      "delta": -0.011350059737156415,
+      "delta_ci95": [
+        -0.031510233127950205,
+        0.0017884199134198938
+      ],
+      "positive": 27,
+      "negative": 31,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.00627240143369176
+    },
+    "Baker's": {
+      "baseline_auc": 0.9864130434782609,
+      "candidate_auc": 0.990036231884058,
+      "delta": 0.0036231884057971175,
+      "delta_ci95": [
+        0.0,
+        0.016313405797101468
+      ],
+      "positive": 12,
+      "negative": 46,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.0011322463768115947
+    },
+    "Contusion": {
+      "baseline_auc": 0.9736842105263158,
+      "candidate_auc": 0.9696356275303644,
+      "delta": -0.004048582995951455,
+      "delta_ci95": [
+        -0.017547182349813985,
+        0.005683244750228292
+      ],
+      "positive": 19,
+      "negative": 39,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.0021929824561403486
+    },
+    "Fracture": {
+      "baseline_auc": 0.9659722222222222,
+      "candidate_auc": 0.9493055555555555,
+      "delta": -0.01666666666666672,
+      "delta_ci95": [
+        -0.04883910515672398,
+        0.0018949468085106835
+      ],
+      "positive": 18,
+      "negative": 40,
+      "missing": 0,
+      "perfect_target_max_macro_gain": 0.0028356481481481475
+    }
+  },
+  "prediction_changes": {
+    "studies": 58,
+    "values_exactly_equal": false,
+    "all_target_rankings_equal": false,
+    "targets": {
+      "ACL": {
+        "max_absolute_change": 0.0862068965517242,
+        "mean_absolute_change": 0.0243757431629013,
+        "rank_changed_rows": 48,
+        "baseline_unique_values": 51,
+        "candidate_unique_values": 52
+      },
+      "MCL": {
+        "max_absolute_change": 0.11206896551724138,
+        "mean_absolute_change": 0.025564803804994055,
+        "rank_changed_rows": 44,
+        "baseline_unique_values": 54,
+        "candidate_unique_values": 50
+      },
+      "Medial Meniscus": {
+        "max_absolute_change": 0.10344827586206895,
+        "mean_absolute_change": 0.02645659928656361,
+        "rank_changed_rows": 48,
+        "baseline_unique_values": 51,
+        "candidate_unique_values": 48
+      },
+      "Lateral Meniscus": {
+        "max_absolute_change": 0.16379310344827586,
+        "mean_absolute_change": 0.0377526753864447,
+        "rank_changed_rows": 50,
+        "baseline_unique_values": 45,
+        "candidate_unique_values": 43
+      },
+      "Medial OA": {
+        "max_absolute_change": 0.1637931034482759,
+        "mean_absolute_change": 0.02645659928656362,
+        "rank_changed_rows": 43,
+        "baseline_unique_values": 53,
+        "candidate_unique_values": 48
+      },
+      "Lateral OA": {
+        "max_absolute_change": 0.1637931034482759,
+        "mean_absolute_change": 0.037455410225921526,
+        "rank_changed_rows": 46,
+        "baseline_unique_values": 50,
+        "candidate_unique_values": 49
+      },
+      "PF OA": {
+        "max_absolute_change": 0.1206896551724137,
+        "mean_absolute_change": 0.0199167657550535,
+        "rank_changed_rows": 41,
+        "baseline_unique_values": 55,
+        "candidate_unique_values": 51
+      },
+      "Effusion": {
+        "max_absolute_change": 0.2068965517241379,
+        "mean_absolute_change": 0.019619500594530326,
+        "rank_changed_rows": 31,
+        "baseline_unique_values": 55,
+        "candidate_unique_values": 53
+      },
+      "Synovitis": {
+        "max_absolute_change": 0.15517241379310343,
+        "mean_absolute_change": 0.021997621878715817,
+        "rank_changed_rows": 44,
+        "baseline_unique_values": 47,
+        "candidate_unique_values": 49
+      },
+      "Baker's": {
+        "max_absolute_change": 0.1293103448275862,
+        "mean_absolute_change": 0.03269916765755054,
+        "rank_changed_rows": 43,
+        "baseline_unique_values": 48,
+        "candidate_unique_values": 47
+      },
+      "Contusion": {
+        "max_absolute_change": 0.1896551724137931,
+        "mean_absolute_change": 0.03180737217598098,
+        "rank_changed_rows": 48,
+        "baseline_unique_values": 53,
+        "candidate_unique_values": 50
+      },
+      "Fracture": {
+        "max_absolute_change": 0.24137931034482768,
+        "mean_absolute_change": 0.03478002378121285,
+        "rank_changed_rows": 47,
+        "baseline_unique_values": 52,
+        "candidate_unique_values": 49
+      }
+    },
+    "interpretation": "Identical ranks imply identical AUC on any fixed labels. Changed ranks do not imply improvement."
+  },
+  "independent_confirmation": false
+}

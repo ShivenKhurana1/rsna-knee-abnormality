@@ -1,0 +1,9 @@
+{
+  "status": "EXPLORATORY_NOT_INDEPENDENT_CONFIRMATION",
+  "studies": 500,
+  "cohort_definition": "Deterministic stride sample of 500 train.csv studies missing at least one of the 12 expert targets (i.e. excluded from gold).",
+  "source_train_csv_sha256": "8ca2203c0e9d61c080c7a314c7cdb51c1b03a1d9eb4770819f7f34af53ef4e33",
+  "labels_read": false,
+  "training_enabled": false,
+  "purpose": "Emit per-stage/per-arm frozen predictions as residual_specialist.py features; report-derived pseudo-labels are matched and applied locally, never inside this notebook."
+}

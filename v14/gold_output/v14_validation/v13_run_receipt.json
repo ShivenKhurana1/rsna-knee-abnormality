@@ -1,0 +1,415 @@
+{
+  "run_id": "e61252755be44f0fad2b94ac010ac5a5",
+  "build": {
+    "recipe": "v13-per-checkpoint-coatnet-input-contracts-v1",
+    "parent_v12_sha256": "1d6f252407130842758e05d0680232b4cc5d4649c5a543b54d65fb6aa38de60a",
+    "builder_sha256": "035722abbe17eeef534e9199c8bef6aa425fca3155186cb577ea943c59413727",
+    "contracts_sha256": "353ac54d19c09bbed002fc08b56e31bc22ff7e41837a94163156e1f5955e3809",
+    "training_enabled": false,
+    "orthodiffusion_in_final_blend": false,
+    "reported_baseline_auc": 0.935,
+    "measured_v13_auc": null,
+    "blend_weights_changed": false
+  },
+  "studies": 58,
+  "targets": [
+    "ACL",
+    "MCL",
+    "Medial Meniscus",
+    "Lateral Meniscus",
+    "Medial OA",
+    "Lateral OA",
+    "PF OA",
+    "Effusion",
+    "Synovitis",
+    "Baker's",
+    "Contusion",
+    "Fracture"
+  ],
+  "events": [
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 54.641,
+      "member": "e5427d6c21",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_e5427d6c21.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 55.123,
+      "member": "d47313baef",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_d47313baef.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 67.305,
+      "member": "ea3fbf6edf",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_ea3fbf6edf.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 69.035,
+      "member": "5f8ba4c5ea",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_5f8ba4c5ea.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 80.098,
+      "member": "013dc75703",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_013dc75703.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 82.061,
+      "member": "2f7e785e82",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_2f7e785e82.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 92.962,
+      "member": "8baecb9d1b",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_8baecb9d1b.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 95.395,
+      "member": "44bc3c6f14",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_44bc3c6f14.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 106.178,
+      "member": "44128e3ff3",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_44128e3ff3.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 108.906,
+      "member": "84079fe8cb",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_84079fe8cb.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 120.025,
+      "member": "ed427aa10a",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_ed427aa10a.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 122.858,
+      "member": "2dce50ebd9",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_2dce50ebd9.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 133.537,
+      "member": "3d1f4c48fc",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_3d1f4c48fc.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 137.225,
+      "member": "91f171fe6f",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_91f171fe6f.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 148.281,
+      "member": "8476b29285",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_8476b29285.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 152.108,
+      "member": "72081758ce",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_72081758ce.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 162.767,
+      "member": "7f8321affc",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_7f8321affc.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 166.344,
+      "member": "1e553ba481",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_1e553ba481.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 176.812,
+      "member": "b7c37cc80e",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_b7c37cc80e.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 180.243,
+      "member": "f335c812fe",
+      "windows": 10,
+      "jitter": false,
+      "checkpoint": "m_f335c812fe.pt",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 130.0, \"group\": 3, \"img\": 336, \"rules\": {\"decode_fill\": \"nearest\", \"lat\": \"centre\", \"order\": \"normal\", \"slot_fallback\": false}, \"slices\": 12, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 221.222,
+      "member": "legacy-f0",
+      "windows": 7,
+      "jitter": false,
+      "checkpoint": "",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 160.0, \"group\": 3, \"img\": 224, \"rules\": {\"decode_fill\": \"zero\", \"lat\": \"corner_x\", \"order\": \"dominant_axis\", \"slot_fallback\": true}, \"slices\": 9, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 221.822,
+      "member": "legacy-f1",
+      "windows": 7,
+      "jitter": false,
+      "checkpoint": "",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 160.0, \"group\": 3, \"img\": 224, \"rules\": {\"decode_fill\": \"zero\", \"lat\": \"corner_x\", \"order\": \"dominant_axis\", \"slot_fallback\": true}, \"slices\": 9, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 225.989,
+      "member": "legacy-f2",
+      "windows": 7,
+      "jitter": false,
+      "checkpoint": "",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 160.0, \"group\": 3, \"img\": 224, \"rules\": {\"decode_fill\": \"zero\", \"lat\": \"corner_x\", \"order\": \"dominant_axis\", \"slot_fallback\": true}, \"slices\": 9, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage1_member_committed",
+      "elapsed_seconds": 226.593,
+      "member": "legacy-f3",
+      "windows": 7,
+      "jitter": false,
+      "checkpoint": "",
+      "pixel_group": "{\"band\": [0.2, 0.8], \"crop_mm\": 160.0, \"group\": 3, \"img\": 224, \"rules\": {\"decode_fill\": \"zero\", \"lat\": \"corner_x\", \"order\": \"dominant_axis\", \"slot_fallback\": true}, \"slices\": 9, \"slots\": [\"SAG_FLUID_FS\", \"COR_FLUID_FS\", \"AX_FLUID_FS\", \"SAG_FLUID_NOFS\", \"COR_T1\", \"SAG_T1\"]}"
+    },
+    {
+      "event": "stage4_arm_contract",
+      "elapsed_seconds": 330.973,
+      "arm": "raptor_ft_coatnet_v5_full_swa.pt",
+      "cache_img": 336,
+      "crop_mm": 140.0,
+      "span_lo": 0.02,
+      "span_hi": 0.98,
+      "k_eval": 62,
+      "model_res": 384,
+      "source": "https://www.kaggle.com/datasets/dreaddevelopment/raptor-knee-maxspan"
+    },
+    {
+      "event": "stage4_arm_predictions",
+      "elapsed_seconds": 455.58,
+      "arm": "raptor_ft_coatnet_v5_full_swa.pt",
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/coatnet_arm_0_raw.csv",
+      "sha256": "7e01de9eb50ac0480e4af8abb6a31dd33aa41d023c5654cf3303e22eccc7a227"
+    },
+    {
+      "event": "stage4_arm_completed",
+      "elapsed_seconds": 455.581,
+      "arm": "raptor_ft_coatnet_v5_full_swa.pt",
+      "studies": 58,
+      "resolution": 384
+    },
+    {
+      "event": "stage4_arm_contract",
+      "elapsed_seconds": 455.582,
+      "arm": "raptor_ft_coatnet_v10_full.pt",
+      "cache_img": 384,
+      "crop_mm": 140.0,
+      "span_lo": 0.02,
+      "span_hi": 0.98,
+      "k_eval": 62,
+      "model_res": 384,
+      "source": "https://www.kaggle.com/datasets/dreaddevelopment/raptor-knee-native384dense"
+    },
+    {
+      "event": "stage4_arm_predictions",
+      "elapsed_seconds": 565.337,
+      "arm": "raptor_ft_coatnet_v10_full.pt",
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/coatnet_arm_1_raw.csv",
+      "sha256": "c1e92c3eb278364f6eb4627315c9cb99f4757e850b75984b28cad179beffe738"
+    },
+    {
+      "event": "stage4_arm_completed",
+      "elapsed_seconds": 565.337,
+      "arm": "raptor_ft_coatnet_v10_full.pt",
+      "studies": 58,
+      "resolution": 384
+    },
+    {
+      "event": "stage4_arm_contract",
+      "elapsed_seconds": 565.339,
+      "arm": "raptor_ft_coatnet_v4_full.pt",
+      "cache_img": 336,
+      "crop_mm": 140.0,
+      "span_lo": 0.06,
+      "span_hi": 0.94,
+      "k_eval": 42,
+      "model_res": 384,
+      "source": "https://www.kaggle.com/code/dreaddevelopment/knee-mri-twelve-findings-from-a-single-model"
+    },
+    {
+      "event": "stage4_arm_predictions",
+      "elapsed_seconds": 663.829,
+      "arm": "raptor_ft_coatnet_v4_full.pt",
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/coatnet_arm_2_raw.csv",
+      "sha256": "a340f54f6e1114a19a9c08f84e006bdb19e39cb87774b35e1e676465a49268a1"
+    },
+    {
+      "event": "stage4_arm_completed",
+      "elapsed_seconds": 663.829,
+      "arm": "raptor_ft_coatnet_v4_full.pt",
+      "studies": 58,
+      "resolution": 384
+    },
+    {
+      "event": "stage4_volume_cache",
+      "elapsed_seconds": 663.83,
+      "hits": 0,
+      "misses": 174,
+      "bytes": 0,
+      "entries": 0,
+      "write_failures": 0
+    },
+    {
+      "event": "v14_ablations_exported",
+      "elapsed_seconds": 664.301,
+      "status": "DIAGNOSTIC_ONLY",
+      "promoted": false,
+      "measured_auc": null,
+      "complete_arms": [
+        "raptor_ft_coatnet_v10_full.pt",
+        "raptor_ft_coatnet_v4_full.pt",
+        "raptor_ft_coatnet_v5_full_swa.pt"
+      ],
+      "baseline_sha256": "69cef8191c0ed5999d0e2099d63aeb12674bf62f75537d8f88df75bf7afd0673",
+      "candidates": {
+        "v13_control": {
+          "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/v13_control.csv",
+          "sha256": "69cef8191c0ed5999d0e2099d63aeb12674bf62f75537d8f88df75bf7afd0673"
+        },
+        "only_arm_0": {
+          "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/only_arm_0.csv",
+          "sha256": "79a677a8ad13322439ba71b2880a5a35b7bc2bd0d6aed6c19d7a043f9089cab1"
+        },
+        "without_arm_0": {
+          "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/without_arm_0.csv",
+          "sha256": "6621232dfbacf1e5e173874e08c331f03cce836b7948b157c44d6d8bc0de0d09"
+        },
+        "only_arm_1": {
+          "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/only_arm_1.csv",
+          "sha256": "df1f4a062fb73782e6ad479e7de0ebc7da5a6ceeb8de8a4ab9760116a959f443"
+        },
+        "without_arm_1": {
+          "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/without_arm_1.csv",
+          "sha256": "9cd3b9cc151e655f8a60f400dfa6f487a777ba0d60783c309b6dd43625b77e3d"
+        },
+        "only_arm_2": {
+          "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/only_arm_2.csv",
+          "sha256": "d65ec8764f468b21c9a2b1698132ea1d833b1d053131ecb2ad23c0d5219ee2c2"
+        },
+        "without_arm_2": {
+          "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/ablations/without_arm_2.csv",
+          "sha256": "548f35c4efb8afa5959d24d420a8de239cb7286436b401441fbf4cbe87ddf244"
+        }
+      },
+      "v13_reproduced": true,
+      "arm_index": {
+        "0": "raptor_ft_coatnet_v10_full.pt",
+        "1": "raptor_ft_coatnet_v4_full.pt",
+        "2": "raptor_ft_coatnet_v5_full_swa.pt"
+      }
+    }
+  ],
+  "snapshots": [
+    {
+      "stage": "stage1",
+      "sha256": "101fece6e953e8f14fafa214175e4027bec2148718eaa619b185585803e4a622",
+      "status": "changed_valid",
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/stage1.csv"
+    },
+    {
+      "stage": "stage2",
+      "sha256": "60696ad4c0c82a2a96a4ce12eb66f883f5dd48f539c46c8f23d31517c6209855",
+      "status": "changed_valid",
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/stage2.csv"
+    },
+    {
+      "stage": "stage3",
+      "sha256": "adfec77d47d1fcb6d9369171061f76d38c9b5349f1893edb82279a1e95cac345",
+      "status": "changed_valid",
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/stage3.csv"
+    },
+    {
+      "stage": "stage4",
+      "sha256": "69cef8191c0ed5999d0e2099d63aeb12674bf62f75537d8f88df75bf7afd0673",
+      "status": "changed_valid",
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/stage4.csv"
+    },
+    {
+      "stage": "final",
+      "sha256": "69cef8191c0ed5999d0e2099d63aeb12674bf62f75537d8f88df75bf7afd0673",
+      "status": "unchanged",
+      "path": "/kaggle/working/v14_validation/v13_diagnostics/e61252755be44f0fad2b94ac010ac5a5/final.csv"
+    }
+  ]
+}

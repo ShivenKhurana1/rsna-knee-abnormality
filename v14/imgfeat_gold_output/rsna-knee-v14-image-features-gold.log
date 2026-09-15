@@ -1,0 +1,32 @@
+[{"stream_name":"stderr","time":6.932209085,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.933491168,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.933498292,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.933502508,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.512775203,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.5128028669999996,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.512809402,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.512816772,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":9.760178434,"data":"GOLD AUDIT BEFORE INFERENCE: {\"status\": \"EXPLORATORY_NOT_INDEPENDENT_CONFIRMATION\", \"studies\": 58, \"cohort_definition\": \"All train.csv rows with all 12 expert targets present; no outcome filtering.\", \"source_train_csv_sha256\": \"8ca2203c0e9d61c080c7a314c7cdb51c1b03a1d9eb4770819f7f34af53ef4e33\", \"labels_sha256\": \"a3ca7df32d43ee7c683091162b1839ea8308d802bea3f2b437f4908d9cbcb079\", \"test_inputs_contain_labels_or_reports\": false, \"training_enabled\": false, \"patient_grouping_verified\": false, \"bootstrap_unit\": \"study (patient grouping unavailable)\", \"coatnet_source_audit\": {\"source\": \"https://www.kaggle.com/code/dreaddevelopment/knee-mri-training-the-twelve-finding-model\", \"gradient_exclusion\": \"Author source excludes gold_ids from train_ids.\", \"checkpoint_selection\": \"Gold AUC selects epochs/top-k/SWA; GOLD IS NOT UNTOUCHED.\", \"actual_checkpoint_id_manifests\": \"Not independently verified by source alone.\"}, \"other_families\": \"Training/calibration exposure UNKNOWN unless explicit loaded metadata establishes it.\", \"plus_0_02_verified\": false, \"leaderboard_submission_allowed\": false, \"counts\": {\"ACL\": {\"positive\": 24, \"negative\": 34}, \"MCL\": {\"positive\": 9, \"negative\": 49}, \"Medial Meniscus\": {\"positive\": 26, \"negative\": 32}, \"Lateral Meniscus\": {\"positive\": 23, \"negative\": 35}, \"Medial OA\": {\"positive\": 15, \"negative\": 43}, \"Lateral OA\": {\"positive\": 11, \"negative\": 47}, \"PF OA\": {\"positive\": 21, \"negative\": 37}, \"Effusion\": {\"positive\": 35, \"negative\": 23}, \"Synovitis\": {\"positive\": 27, \"negative\": 31}, \"Baker's\": {\"positive\": 12, \"negative\": 46}, \"Contusion\": {\"positive\": 19, \"negative\": 39}, \"Fracture\": {\"positive\": 18, \"negative\": 40}}}\n"}
+,{"stream_name":"stdout","time":16.125534659,"data":"cuda:0 probe PASS (compute 7.5)\n"}
+,{"stream_name":"stdout","time":16.166441304,"data":"cuda:1 probe PASS (compute 7.5)\n"}
+,{"stream_name":"stdout","time":16.166487296,"data":"devices: ['cuda:0', 'cuda:1']\n"}
+,{"stream_name":"stdout","time":16.192301651,"data":"[    0.0s] input root: /kaggle/temp/v14-gold-mdo_rwig/rsna-knee-abnormality-detection\n"}
+,{"stream_name":"stdout","time":16.200733932,"data":"[    0.0s] memory: 29.5 GB available, 13.3 GB to the cache; sizing for 4407 train + 1322 test studies -\u003e 1 group(s) of 3 = 3 slices per slot\n"}
+,{"stream_name":"stdout","time":16.201586428,"data":"[    0.0s] cache layout: 1 groups x 3 slices = 3 per slot\n"}
+,{"stream_name":"stdout","time":39.233988912,"data":"[   22.8s] backbone: 12 blocks, last 0 trainable (0.0M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":41.061958798,"data":"[   24.9s] feature extraction: 58 studies, 6 slots, dim 768\n"}
+,{"stream_name":"stdout","time":61.011751403,"data":"[   44.8s] features 16/58\n"}
+,{"stream_name":"stdout","time":81.000518671,"data":"[   64.8s] features 32/58\n"}
+,{"stream_name":"stdout","time":105.133999349,"data":"[   89.0s] features 48/58\n"}
+,{"stream_name":"stdout","time":119.894184547,"data":"[  103.7s] features 58/58\n"}
+,{"stream_name":"stdout","time":119.905303918,"data":"[  103.7s] saved image_features.npz: (58, 768), mean slots present 4.71/6\n"}
+,{"stream_name":"stdout","time":119.906058488,"data":"DONE, feature extraction only, DO NOT SUBMIT.\n"}
+,{"stream_name":"stderr","time":125.234101865,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":125.234139375,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":125.391164393,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":125.391190277,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":126.060830931,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":126.366465574,"data":"[NbConvertApp] Writing 66808 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":128.781146845,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":129.781802784,"data":"[NbConvertApp] Writing 515501 bytes to __results__.html\n"}
+]
