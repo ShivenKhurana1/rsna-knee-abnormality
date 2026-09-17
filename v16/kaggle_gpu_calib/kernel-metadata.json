@@ -1,0 +1,20 @@
+{
+  "id": "seanzhang2445/rsna-knee-v16-fullrecipe-calibration",
+  "title": "RSNA Knee V16 Full-Recipe Calibration",
+  "code_file": "train.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
+  "dataset_sources": [
+    "stevenleehans/rsna-knee-llm-report-labels"
+  ],
+  "model_sources": [
+    "metaresearch/dinov2/PyTorch/small/1"
+  ],
+  "kernel_sources": []
+}
