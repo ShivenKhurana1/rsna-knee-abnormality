@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "scope": "Synthetic CPU engineering checks only",
+  "reference_command": "python research/next_tier_095/reference_patterns.py",
+  "checks": [
+    "Live test IDs replace sample-submission rows",
+    "Arbitrary root nesting and UID lengths",
+    "Dynamic targets and checkpoint target reordering",
+    "Variable series and slice counts including singleton series",
+    "Absent optional series metadata",
+    "Pixel-inferred dimensions and aspect-preserving resizing",
+    "Missing-study availability mask",
+    "CNN and GRU forward computation",
+    "Padding and batch-composition invariance",
+    "Finite masked asymmetric-loss gradients",
+    "All-unknown loss returns differentiable zero",
+    "Keyed submission reordering and missing-ID rejection",
+    "Group separation and multilabel support audit",
+    "Reference module compilation",
+    "All eight Python report blocks compile"
+  ],
+  "not_run": [
+    "New real-DICOM reader implementation or numerical validation",
+    "GPU model training or inference",
+    "Real validation AUC measurement",
+    "Reproduction of the user-reported 0.941 score",
+    "Kaggle submission or private-test scoring"
+  ]
+}

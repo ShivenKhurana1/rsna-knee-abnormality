@@ -1,0 +1,32 @@
+[
+  {
+    "ref": "evgendvorkin/rsna-baseline",
+    "url": "https://www.kaggle.com/code/evgendvorkin/rsna-baseline",
+    "version": 15,
+    "last_run": "2026-09-12T03:02:13.4577041Z",
+    "source_sha256": "eb850464cec6a406d36a225625cc4bf22916720ec0175c8aab1fcf6023eec739",
+    "cells": 46,
+    "datasets": [
+      "dreaddevelopment/raptor-knee-maxspan",
+      "dreaddevelopment/raptor-knee-native384",
+      "dreaddevelopment/raptor-knee-native384dense",
+      "mattiaangeli/knee-mri-fold-weights",
+      "mattiaangeli/opencv-python-headless-4120088-x86",
+      "marwanmath/resnet-50-radimagenet-marwan",
+      "mattiaangeli/rsna-knee-coat-resgated-ep10-top3",
+      "antoinegg1/rsna-knee-e11-diverse-heads-v20",
+      "antoinegg1/rsna-knee-e9-radimagenet-heads-v15",
+      "pilkwang/rsna-knee-llm-labels",
+      "prvsiyan/rsna-knee-v52-radimagenet-heads-20260812",
+      "pilkwang/rsna-knee-weights"
+    ],
+    "kernels": [
+      "sofiaanjenje/rsna-knee-e11-train",
+      "sofiaanjenje/rsna-knee-e13-train"
+    ],
+    "models": [
+      "metaresearch/dinov2/PyTorch/base/1",
+      "metaresearch/dinov2/PyTorch/small/1"
+    ]
+  }
+]

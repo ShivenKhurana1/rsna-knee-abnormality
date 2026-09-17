@@ -1,0 +1,20 @@
+{
+  "notebooks": {
+    "rsna-knee-v16-prepare.ipynb": "e6f7d13ca374634c416b90fd683910bf73b84ea0e3da86e76ff6a4ef82a424fb",
+    "rsna-knee-v16-train.ipynb": "9fcf335d2215cbd302f10316aaba70aea3da8ff3c3050ef936f97f73be76c493",
+    "rsna-knee-v16-infer.ipynb": "e68672377f9063fab7fd78403c344911810d628503642e4554c7a0be716db36f"
+  },
+  "embedded_modules": {
+    "__init__.py": "5a9c1ecbe8bbf4b7c519129e7aeeb53d59eff4ef1621476f4e2c4f9188344f4a",
+    "__main__.py": "6045855b2d8dc04e4657b3c46897be41d3e3ed01bb9d53a6cfbd52fcf15185ea",
+    "common.py": "7c588bd193e170e117c231991a14eca1cf4c9520e749bafd45a6d2abaf7c15a1",
+    "data.py": "a21f0f7557ecb61aab10e1ecad3c67fbc0494de14df3f78953dc883d5ff02609",
+    "model.py": "abd055830022d5e0aedbc6d0454aff965524b0c0088ce97ddbc9e166f1b2eb1f",
+    "validation.py": "17d0b965b62e7fda5b99722b16c320bcf0fed301d3b8b92161396397b503091f",
+    "runner.py": "47b2ed30ed059398bd71809ed233aa7c300f5e94bc32d3a5c555a8066d0a033e",
+    "evaluation.py": "6ce298a768419885d70a2cfbfe7f5edc3e0ddb12fc5d6789b9e044a4d1524b2c",
+    "config.json": "9e75d7424e1db07fd7639ecb051c5a941ddc4d07112201e5c93508dc216cfef3"
+  },
+  "scored_auc": null,
+  "uploaded": false
+}

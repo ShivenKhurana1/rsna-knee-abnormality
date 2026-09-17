@@ -13,6 +13,7 @@ third-party weights. Everything mounts its inputs from Kaggle at run time; see e
 
 | Directory | What it is |
 |---|---|
+| `v16` | [Dynamic DICOM training/inference package](v16/README.md): variable-series DINOv2/CNN + BiGRU, grouped folds, fold-local report calibration, resumable training and offline notebooks; competition AUC unmeasured |
 | `v5` … `v9`, `v9-flash`, `v10` | Successive submission notebooks (see below) |
 | `v11` | [Runnable pretrained V11 candidate](v11/README.md), regression tests, and accuracy/efficiency audits; AUC not yet measured |
 | `v12` | [Kaggle submission package](v12/README.md): self-contained notebook, input metadata, release ZIP and final-output checks |

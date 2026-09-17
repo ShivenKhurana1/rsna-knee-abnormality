@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "RSNA: download, prepare and train first fold",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv-v16/Scripts/python.exe",
+      "args": ["-u", "v16/laptop_run.py"],
+      "options": {"cwd": "${workspaceFolder}", "env": {"USE_TF": "0"}},
+      "problemMatcher": [],
+      "runOptions": {"instanceLimit": 1}
+    },
+    {
+      "label": "RSNA: resume prepared first fold",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv-v16/Scripts/python.exe",
+      "args": ["-u", "-m", "v16", "train", "--work", "local/work-laptop", "--fold", "0", "--seed", "1400", "--arm", "platt"],
+      "options": {"cwd": "${workspaceFolder}", "env": {"USE_TF": "0"}},
+      "problemMatcher": []
+    }
+  ]
+}

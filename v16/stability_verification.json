@@ -1,0 +1,6 @@
+{
+  "runtime_sha256": "2e25b51530553dfe431c0f4dd8e8ba22296aba7c4cda52fe7aadad05ca15451f",
+  "tests_passed": 7,
+  "gpu_pretrained_synthetic_optimizer_steps": 20,
+  "full_competition_training_verified": false
+}

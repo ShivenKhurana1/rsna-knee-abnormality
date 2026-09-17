@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "runtime_code_sha256": "e92016890d47506b2792ba5e94f1aa233b0a50bc3442e818c481f9a8c9604648",
+  "cpu_tests": {
+    "command": "python -m unittest v16.test_pipeline v16.test_encoders -v",
+    "test_methods": 5,
+    "scope": "Generated single-frame DICOMs and random tiny/HF/CNN checkpoint fixtures"
+  },
+  "cuda_smoke": {
+    "status": "FOLD_COMPLETE",
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "scope": "Generated DICOMs; tiny encoder; fp16 training and held-out inference"
+  },
+  "notebook_validation": "All three notebooks compile and pass nbformat schema validation",
+  "versions": {
+    "torch": "2.14.0+cu130",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "pydicom": "3.0.2",
+    "transformers": "4.57.6",
+    "timm": "1.0.22"
+  },
+  "competition_training_run": false,
+  "competition_score": null,
+  "kaggle_uploaded": false,
+  "remaining_external_validation": [
+    "Actual attached pretrained weights",
+    "Clinical compressed DICOM codecs",
+    "Full-cohort GPU runtime",
+    "Competition OOF/leaderboard score"
+  ]
+}

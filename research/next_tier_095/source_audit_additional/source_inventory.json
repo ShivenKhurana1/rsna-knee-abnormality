@@ -1,0 +1,89 @@
+[
+  {
+    "ref": "mattiaangeli/bend-the-knee-to-the-dinosaurs",
+    "url": "https://www.kaggle.com/code/mattiaangeli/bend-the-knee-to-the-dinosaurs",
+    "version": 38,
+    "last_run": "2026-09-12T03:05:23.9818643Z",
+    "source_sha256": "5e03fc9f7799b2e46bcf67395d1ad5177d1e9f19b58cc93825c9fc02da6d0155",
+    "cells": 21,
+    "datasets": [
+      "dreaddevelopment/raptor-knee-maxspan",
+      "dreaddevelopment/raptor-knee-native384",
+      "dreaddevelopment/raptor-knee-native384dense",
+      "mattiaangeli/knee-mri-fold-weights",
+      "mattiaangeli/opencv-python-headless-4120088-x86",
+      "marwanmath/resnet-50-radimagenet-marwan",
+      "mattiaangeli/rsna-knee-coat-resgated-ep10-top3",
+      "antoinegg1/rsna-knee-e11-diverse-heads-v20",
+      "antoinegg1/rsna-knee-e9-radimagenet-heads-v15",
+      "pilkwang/rsna-knee-llm-labels",
+      "prvsiyan/rsna-knee-v52-radimagenet-heads-20260812",
+      "pilkwang/rsna-knee-weights"
+    ],
+    "kernels": [
+      "sofiaanjenje/rsna-knee-e11-train",
+      "sofiaanjenje/rsna-knee-e13-train"
+    ],
+    "models": [
+      "metaresearch/dinov2/PyTorch/small/1"
+    ]
+  },
+  {
+    "ref": "maverickss26/rsna-knee-0941-restructured",
+    "url": "https://www.kaggle.com/code/maverickss26/rsna-knee-0941-restructured",
+    "version": 5,
+    "last_run": "2026-09-12T03:05:23.9591914Z",
+    "source_sha256": "e3d4a594dd5f7b2f5104f05f716a36adc18ed80bb5451d4d94f6266249b93b7c",
+    "cells": 51,
+    "datasets": [
+      "dreaddevelopment/raptor-knee-maxspan",
+      "dreaddevelopment/raptor-knee-native384",
+      "dreaddevelopment/raptor-knee-native384dense",
+      "mattiaangeli/knee-mri-fold-weights",
+      "mattiaangeli/opencv-python-headless-4120088-x86",
+      "marwanmath/resnet-50-radimagenet-marwan",
+      "mattiaangeli/rsna-knee-coat-resgated-ep10-top3",
+      "antoinegg1/rsna-knee-e11-diverse-heads-v20",
+      "antoinegg1/rsna-knee-e9-radimagenet-heads-v15",
+      "pilkwang/rsna-knee-llm-labels",
+      "prvsiyan/rsna-knee-v52-radimagenet-heads-20260812",
+      "pilkwang/rsna-knee-weights"
+    ],
+    "kernels": [
+      "sofiaanjenje/rsna-knee-e11-train",
+      "sofiaanjenje/rsna-knee-e13-train"
+    ],
+    "models": [
+      "metaresearch/dinov2/PyTorch/small/1"
+    ]
+  },
+  {
+    "ref": "renta0426/rsna-knee-hybrid-raptor-meniscus-specialist",
+    "url": "https://www.kaggle.com/code/renta0426/rsna-knee-hybrid-raptor-meniscus-specialist",
+    "version": 1,
+    "last_run": "2026-09-12T03:05:23.9579854Z",
+    "source_sha256": "f7c351b8976a75e7f7227bd78ab5f2cbb00f978221481a266e5f7baf5ec212a4",
+    "cells": 27,
+    "datasets": [
+      "dreaddevelopment/raptor-knee-maxspan",
+      "dreaddevelopment/raptor-knee-native384",
+      "dreaddevelopment/raptor-knee-native384dense",
+      "mattiaangeli/knee-mri-fold-weights",
+      "mattiaangeli/opencv-python-headless-4120088-x86",
+      "marwanmath/resnet-50-radimagenet-marwan",
+      "mattiaangeli/rsna-knee-coat-resgated-ep10-top3",
+      "antoinegg1/rsna-knee-e11-diverse-heads-v20",
+      "antoinegg1/rsna-knee-e9-radimagenet-heads-v15",
+      "pilkwang/rsna-knee-llm-labels",
+      "prvsiyan/rsna-knee-v52-radimagenet-heads-20260812",
+      "pilkwang/rsna-knee-weights"
+    ],
+    "kernels": [
+      "sofiaanjenje/rsna-knee-e11-train",
+      "sofiaanjenje/rsna-knee-e13-train"
+    ],
+    "models": [
+      "metaresearch/dinov2/PyTorch/small/1"
+    ]
+  }
+]

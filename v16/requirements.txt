@@ -1,0 +1,12 @@
+# Install a CUDA-compatible torch build separately; do not replace it blindly.
+numpy>=1.26,<3
+pandas>=2.2,<4
+scipy>=1.12,<2
+scikit-learn>=1.5,<2
+pydicom==3.0.2
+pylibjpeg>=2,<3
+pylibjpeg-libjpeg>=2,<3
+pylibjpeg-openjpeg>=2,<3
+transformers>=4.45,<5
+timm>=1.0,<2
+# Native Meta DINOv2 .pth also requires an attached local facebookresearch/dinov2 repo.

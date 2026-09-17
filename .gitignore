@@ -24,3 +24,5 @@ CLAUDE.md
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+.venv-v16/
+local/
